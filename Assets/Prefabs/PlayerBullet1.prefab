@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3014436241529167161}
   - component: {fileID: 3782007481410886366}
+  - component: {fileID: 785122244228399449}
   m_Layer: 0
-  m_Name: PlayerBullet
+  m_Name: PlayerBullet1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &785122244228399449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072622715063019996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88daea394b6259043ad4b4d42c50603e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
