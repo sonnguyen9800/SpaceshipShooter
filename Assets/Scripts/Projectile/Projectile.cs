@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField]
+    private float lifetime = 2.0f;
     private Rigidbody2D rb;
     [SerializeField]
     private float damage;
@@ -13,6 +15,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, lifetime);
     }
     public void SetOwnerType(CharacterType ownerType)
     {
@@ -31,6 +34,5 @@ public class Projectile : MonoBehaviour
         if (ownerType == character.GetCharacterType()) return;
         health.TakeDamage(damage);
         Destroy(gameObject);
-
     }
 }
