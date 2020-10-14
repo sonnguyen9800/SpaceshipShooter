@@ -14,9 +14,9 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void SetOwner(CharacterType characterType)
+    public void SetOwnerType(CharacterType ownerType)
     {
-        this.ownerType = characterType;
+        this.ownerType = ownerType;
     }
     public void SetFlyingDirection(Vector2 shootVector)
     {

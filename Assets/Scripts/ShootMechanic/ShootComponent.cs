@@ -6,12 +6,15 @@ public class ShootComponent : MonoBehaviour
 {
     [SerializeField]
     private Projectile projectile;
-    [SerializeField]
-    private Transform shootTransform;
+    private CharacterType ownerType;
+    public void SetOwnerType(CharacterType ownerType)
+    {
+        this.ownerType = ownerType;
+    }
     public void Shoot()
     {
-        Projectile p = Instantiate(projectile, shootTransform.position, shootTransform.rotation);
-        p.SetFlyingDirection(shootTransform.up);
-        p.SetOwner(GetComponent<ICharacter>().GetCharacterType());
+        Projectile p = Instantiate(projectile, transform.position, transform.rotation);
+        p.SetFlyingDirection(transform.up);
+        p.SetOwnerType(ownerType);
     }
 }
