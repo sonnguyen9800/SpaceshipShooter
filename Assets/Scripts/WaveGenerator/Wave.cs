@@ -7,15 +7,14 @@ public class Wave : MonoBehaviour
 {
     private string LOG_TAG = typeof(Wave).Name;
     [SerializeField] private float spawningCooldown; 
-
-    [SerializeField] private int numberEnemy = 5;
+    [SerializeField] private int numberEnemy;
     [SerializeField] private List<Transform> moveLocations;
     [SerializeField] private Enemy enemyModel;
-
     private List<Enemy> enemyList = new List<Enemy>();
-    void Awake(){
-    }
+    private int aliveEnemy = 0;
 
+
+    // Spawning the Enemy
     private IEnumerator spawningEnemy(){
         for (int i = 0 ; i < this.numberEnemy; i++ ){
             Enemy enemy = Instantiate(enemyModel, this.transform.position, this.transform.rotation);
@@ -25,17 +24,16 @@ public class Wave : MonoBehaviour
             }
             yield return new WaitForSeconds(spawningCooldown);
         }
-
     }
     void Start()
     {
         StartCoroutine(spawningEnemy());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        int aliveEnemy = 0;
+
+    void checkWaveClear(){
+        // If Wave is clealer, the wave itself and locations attached within is destroyed 
+        aliveEnemy = 0;
         foreach(Enemy enemy in this.enemyList){
             if (enemy != null){
                 aliveEnemy ++;
@@ -49,5 +47,10 @@ public class Wave : MonoBehaviour
             }
             Destroy(gameObject);
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+       checkWaveClear();
     }
 }
