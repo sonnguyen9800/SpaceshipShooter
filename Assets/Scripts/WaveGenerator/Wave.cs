@@ -8,12 +8,28 @@ public class Wave : MonoBehaviour
     [SerializeField] private float spawningCooldown;
     [SerializeField] private int enemyCount;
     private bool hasFinishedSpawning = false;
+
     [SerializeField] private List<Transform> moveLocations;
     [SerializeField] private GameObject enemyModel;
     private List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
 
+    public enum WaveState {
+        Ini,
+        SpaningEnemy,
+        FinishSpawning,
+        End
+    }
+    private WaveState currentState = WaveState.Ini;
+    void Awake(){
+    }
+
     void Start()
     {
+    }
+
+    public void startWave(){
+        this.currentState = WaveState.SpaningEnemy;
+
         StartCoroutine(SpawnEnemy());
     }
     private IEnumerator SpawnEnemy()
@@ -25,15 +41,23 @@ public class Wave : MonoBehaviour
             movingObject.SetLocations(moveLocations);
             yield return new WaitForSeconds(spawningCooldown);
         }
-        hasFinishedSpawning = true;
+        this.hasFinishedSpawning = true;
+        this.currentState = WaveState.FinishSpawning;
+
     }
     private void Update()
     {
         CleanUpNullObjects();
         if (!IsWaveCleared()) return;
-        Debug.Log("Wave cleared");
-        Destroy(gameObject);
+        this.currentState = WaveState.End;
+
     }
+
+    public WaveState GetState(){
+        return currentState;
+    }
+
+
 
     private void CleanUpNullObjects()
     {
