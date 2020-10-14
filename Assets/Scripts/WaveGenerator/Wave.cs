@@ -13,7 +13,10 @@ public class Wave : MonoBehaviour
     // Cooldown time between each enemy spawning
     [SerializeField] private float spawnningRate = 0.1f;
     // Start is called before the first frame update
+<<<<<<< HEAD
     [SerializeField] private Enemy enemy = 
+=======
+>>>>>>> b7b7067d3014d7270297af79a1e79b507094c3db
     void Start()
     {
         Quaternion rotationDown = new Quaternion(180, 0, 0,0);
