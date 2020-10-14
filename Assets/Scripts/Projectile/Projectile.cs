@@ -34,7 +34,6 @@ public class Projectile : MonoBehaviour
         if (ownerType == character.GetCharacterType()) return;
         health.TakeDamage(damage);
         Destroy(gameObject);
-
     }
 
     private void Update(){
