@@ -14,22 +14,24 @@ public class Wave : MonoBehaviour
     [SerializeField] private List<Transform> moveLocations;
     [SerializeField] private Enemy enemy1;
     void Awake(){
-      for (int i = 0 ; i < this.numberEnemy; i++ ){
-            Debug.Log(LOG_TAG + " Spawning enemy number: " + i);
-            Enemy enemy = Instantiate(enemy1, this.transform.position, this.transform.rotation);
-
-            enemy.movePaths = this.moveLocations;
-            Debug.Log(LOG_TAG + " There are " + enemy.movePaths.Count + " locations to move");
-
-        
-        }
+     
     }
 
+    private IEnumerator spawningEnemy(){
+        for (int i = 0 ; i < this.numberEnemy; i++ ){
+            Debug.Log(LOG_TAG + " Spawning enemy number: " + i);
+            Enemy enemy = Instantiate(enemy1, this.transform.position, this.transform.rotation);
+            foreach(var transform in this.moveLocations){
+                enemy.movePaths.Add(transform);
+            }
+            yield return new WaitForSeconds(1.2f);
+        }
+
+    }
     void Start()
     {
-       // Quaternion rotationDown = new Quaternion(180, 0, 0,0);
-  
-
+        
+        StartCoroutine(spawningEnemy());
     }
 
     // Update is called once per frame

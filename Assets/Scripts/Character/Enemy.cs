@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, ICharacter
         return CharacterType.ENEMY;
     }
 
+    private Transform nextDestination;
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,23 +27,31 @@ public class Enemy : MonoBehaviour, ICharacter
 
     void Start(){
         Debug.Log(LOG_TAG + " Has been created with " + this.movePaths.Count + " destination point(s)");
-        Debug.Log(this.movePaths.ToArray().ToString());
+        foreach(var transform in this.movePaths){
+                print("Location index " +
+                transform.position.ToString());
+        }
+
+        // Assign first location to move:
+        nextDestination = this.movePaths[0];
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        // If not move path is assigned, skip
         if (movePaths.Count == 0) return;
         
-        
+        // Create new Destination
         Transform nextDest = this.movePaths[this.currentLocIndex];
+        // Move to next destination
         transform.position = Vector2.MoveTowards(transform.position,nextDest.position, moveSpeed*Time.deltaTime);
 
         // Arrived Success
         if (Vector2.Distance(transform.position, nextDest.position) <= 0.2){
-            this.currentLocIndex ++;
             Debug.Log("Arrived to Position " + currentLocIndex);
+            this.currentLocIndex ++;
 
             if (currentLocIndex == (this.movePaths.Count)){
                 currentLocIndex = 0;

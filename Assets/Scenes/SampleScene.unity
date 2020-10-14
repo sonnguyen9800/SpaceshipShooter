@@ -1073,7 +1073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839984509}
   m_Layer: 0
-  m_Name: loc2
+  m_Name: loc3
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1087,7 +1087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839984508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.18, y: -2.29, z: 0}
+  m_LocalPosition: {x: 2.06, y: -2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1921731341}
@@ -1123,11 +1123,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCooldown: 20
-  numberEnemy: 1
+  numberEnemy: 2
   moveLocations:
   - {fileID: 546145026}
   - {fileID: 1349166322}
-  - {fileID: 1349166322}
+  - {fileID: 1839984509}
   enemy1: {fileID: 5492229349813338168, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
 --- !u!4 &1921731341
 Transform:
