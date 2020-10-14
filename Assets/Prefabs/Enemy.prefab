@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3425747240441026663}
+  - component: {fileID: 3063270567634594459}
   m_Layer: 0
-  m_Name: ShootPoint
+  m_Name: ShootComponent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,13 +24,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3362064050520090757}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5492229349813338166}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &3063270567634594459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362064050520090757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b1e9ea9410a8b47a2bbac8a470be9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 4091832339467716562, guid: 58bcc26d94d72aa4f8c96633bc6f3682, type: 3}
 --- !u!1 &5492229349813338173
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,6 @@ GameObject:
   - component: {fileID: 5492229349813338168}
   - component: {fileID: 5492229349813338171}
   - component: {fileID: 5492229349813338170}
-  - component: {fileID: 2925476415411123154}
   - component: {fileID: 3389049763200059793}
   m_Layer: 0
   m_Name: Enemy
@@ -159,20 +172,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.042093754, y: 0.021047026}
   m_Size: {x: 0.38743734, y: 0.59790593}
   m_Direction: 0
---- !u!114 &2925476415411123154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492229349813338173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b1e9ea9410a8b47a2bbac8a470be9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 4091832339467716562, guid: 58bcc26d94d72aa4f8c96633bc6f3682, type: 3}
-  shootTransform: {fileID: 3425747240441026663}
 --- !u!114 &3389049763200059793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,4 +185,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseCooldown: 0.5
-  shootComponent: {fileID: 2925476415411123154}
+  shootComponents:
+  - {fileID: 3063270567634594459}

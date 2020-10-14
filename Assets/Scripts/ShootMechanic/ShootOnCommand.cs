@@ -10,7 +10,15 @@ public class ShootOnCommand : MonoBehaviour
     [SerializeField]
     private KeyCode shootKey;
     [SerializeField]
-    private ShootComponent shootComponent;
+    private ShootComponent[] shootComponents;
+    private void Awake()
+    {
+        foreach (ShootComponent shootComponent in shootComponents)
+        {
+            shootComponent.SetOwnerType(GetComponent<ICharacter>().GetCharacterType());
+            print(gameObject.name);
+        }
+    }
     private void Update()
     {
         // Not on cooldown
@@ -18,7 +26,10 @@ public class ShootOnCommand : MonoBehaviour
         {
             if (Input.GetKey(shootKey))
             {
-                shootComponent.Shoot();
+                foreach (ShootComponent shootComponent in shootComponents)
+                {
+                    shootComponent.Shoot();
+                }
                 cooldown = baseCooldown;
             }
             return;
