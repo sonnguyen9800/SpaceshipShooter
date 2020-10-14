@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private float lifetime = 2.0f;
+    private float cooldown = 0;
     private Rigidbody2D rb;
     [SerializeField]
     private float damage;
@@ -13,6 +15,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        this.cooldown = lifetime;
     }
     public void SetOwnerType(CharacterType ownerType)
     {
@@ -32,5 +35,12 @@ public class Projectile : MonoBehaviour
         health.TakeDamage(damage);
         Destroy(gameObject);
 
+    }
+
+    private void Update(){
+        this.cooldown -= Time.deltaTime;
+        if (this.cooldown < 0){
+            Destroy(gameObject);
+        }
     }
 }
