@@ -8,13 +8,23 @@ public class OnTimerShooting : MonoBehaviour
     private float baseCooldown;
     private float cooldown = 0;
     [SerializeField]
-    private ShootComponent shootComponent;
+    private ShootComponent[] shootComponents;
+    private void Awake()
+    {
+        foreach (ShootComponent shootComponent in shootComponents)
+        {
+            shootComponent.SetOwnerType(GetComponent<ICharacter>().GetCharacterType());
+        }
+    }
     private void Update()
     {
         // Not on cooldown
         if (cooldown <= 0)
         {
-            shootComponent.Shoot();
+            foreach (ShootComponent shootComponent in shootComponents)
+            {
+                shootComponent.Shoot();
+            }
             cooldown = baseCooldown;
             return;
         }
