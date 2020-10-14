@@ -12,5 +12,6 @@ public class ShootComponent : MonoBehaviour
     {
         Projectile p = Instantiate(projectile, shootTransform.position, shootTransform.rotation);
         p.SetFlyingDirection(shootTransform.up);
+        p.SetOwner(GetComponent<ICharacter>().GetCharacterType());
     }
 }

@@ -40,10 +40,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5234961719895697924}
   - component: {fileID: 5234961719895697925}
-  - component: {fileID: 5234961719895697947}
   - component: {fileID: 5234961719895697945}
   - component: {fileID: 8308104289727360028}
   - component: {fileID: 953043761941423158}
+  - component: {fileID: 86280029287793278}
+  - component: {fileID: 1065187886}
+  - component: {fileID: 1065187891}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -58,7 +60,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234961719895697926}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.15, y: -0.13, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -105,7 +107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: eea1acef1378a6341b8444309968441f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,22 +119,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5234961719895697947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5234961719895697926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 965a19963e0a91744ba267a60f3989e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLifePoint: 1000
-  lifepoint: 0
-  armor: 0
-  fireRate: 0
 --- !u!61 &5234961719895697945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188,3 +174,48 @@ MonoBehaviour:
   baseCooldown: 1
   shootKey: 323
   shootComponent: {fileID: 8308104289727360028}
+--- !u!114 &86280029287793278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234961719895697926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf576c0d5bd08484584802015ec8832c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 200
+--- !u!114 &1065187886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234961719895697926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6409cec8840ca146a74a2b7007ca71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  minX: -3
+  maxX: 3
+  minY: -6
+  maxY: 5
+--- !u!114 &1065187891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234961719895697926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965a19963e0a91744ba267a60f3989e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifepoint: 0
+  armor: 0
+  fireRate: 0
