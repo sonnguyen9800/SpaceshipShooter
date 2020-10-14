@@ -20,7 +20,6 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHP -= amount;
-        print(currentHP);
         OnHealthChanged?.Invoke();
     }
     public void Die()

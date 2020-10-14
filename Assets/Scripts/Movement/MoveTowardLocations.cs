@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class MoveTowardLocations : MonoBehaviour
 {
-    private string LOG_TAG = typeof(MoveTowardLocations).Name;
     [SerializeField]
     private float moveSpeed;
     private List<Transform> locations;
     private int currentLocationIndex = 0;
     private Vector2 destination;
-    void Start()
-    {
-        Debug.Log(LOG_TAG + " Has been created with " + locations.Count + " destination point(s)");
-        foreach (var transform in locations)
-        {
-            print("Location index " +
-            transform.position.ToString());
-        }
-    }
     public void SetLocations(List<Transform> locations)
     {
         this.locations = locations;

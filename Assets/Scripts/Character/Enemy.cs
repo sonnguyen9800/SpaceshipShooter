@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, ICharacter
-{    private Health health;
+{
+    private Health health;
     public CharacterType GetCharacterType()
     {
         return CharacterType.ENEMY;

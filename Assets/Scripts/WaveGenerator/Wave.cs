@@ -5,52 +5,42 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    private string LOG_TAG = typeof(Wave).Name;
-    [SerializeField] private float spawningCooldown; 
-    [SerializeField] private int numberEnemy;
+    [SerializeField] private float spawningCooldown;
+    [SerializeField] private int enemyCount;
+    private bool hasFinishedSpawning = false;
     [SerializeField] private List<Transform> moveLocations;
-    [SerializeField] private Enemy enemyModel;
-    private List<Enemy> enemyList = new List<Enemy>();
-    private int aliveEnemy = 0;
+    [SerializeField] private GameObject enemyModel;
+    private List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
 
-
-    // Spawning the Enemy
-    private IEnumerator spawningEnemy(){
-        for (int i = 0 ; i < this.numberEnemy; i++ ){
-            Enemy enemy = Instantiate(enemyModel, this.transform.position, this.transform.rotation);
-            this.enemyList.Add(enemy);
-            foreach(var transform in this.moveLocations){
-                enemy.movePaths.Add(transform);
-            }
-            yield return new WaitForSeconds(spawningCooldown);
-        }
-    }
     void Start()
     {
-        StartCoroutine(spawningEnemy());
+        StartCoroutine(SpawnEnemy());
     }
-
-
-    void checkWaveClear(){
-        // If Wave is clealer, the wave itself and locations attached within is destroyed 
-        aliveEnemy = 0;
-        foreach(Enemy enemy in this.enemyList){
-            if (enemy != null){
-                aliveEnemy ++;
-            }
-        }
-        if (aliveEnemy == 0){
-            Debug.Log("The wave has been cleared");
-            foreach(Transform transform in this.moveLocations){
-                GameObject location = transform.gameObject;
-                Destroy(location);
-            }
-            Destroy(gameObject);
-        }
-    }
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SpawnEnemy()
     {
-       checkWaveClear();
+        for (int i = 0; i < enemyCount; i++)
+        {
+            MoveTowardLocations movingObject = Instantiate(enemyModel, transform.position, transform.rotation).GetComponent<MoveTowardLocations>();
+            movingObjects.Add(movingObject);
+            movingObject.SetLocations(moveLocations);
+            yield return new WaitForSeconds(spawningCooldown);
+        }
+        hasFinishedSpawning = true;
+    }
+    private void Update()
+    {
+        CleanUpNullObjects();
+        if (!IsWaveCleared()) return;
+        Debug.Log("Wave cleared");
+        Destroy(gameObject);
+    }
+
+    private void CleanUpNullObjects()
+    {
+        movingObjects.RemoveAll(m => m == null);
+    }
+    private bool IsWaveCleared()
+    {
+        return hasFinishedSpawning && movingObjects.Count == 0;
     }
 }
