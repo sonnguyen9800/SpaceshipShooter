@@ -30,4 +30,8 @@ public class Health : MonoBehaviour
     {
         return currentHP / maxHP;
     }
+
+    public float getHealth(){
+        return this.currentHP;
+    }
 }

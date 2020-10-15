@@ -25,6 +25,11 @@ public class Projectile : MonoBehaviour
     {
         rb.velocity = shootVector * speed;
     }
+
+    public CharacterType GetOwnerType(){
+        return this.ownerType;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Health health = other.GetComponent<Health>();
