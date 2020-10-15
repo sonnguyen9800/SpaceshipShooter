@@ -7,29 +7,30 @@ public class Wave : MonoBehaviour
 {
     [SerializeField] private float spawningCooldown;
     [SerializeField] private int enemyCount;
-    private bool hasFinishedSpawning = false;
-
     [SerializeField] private List<Transform> moveLocations;
     [SerializeField] private GameObject enemyModel;
     private List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
 
-    public enum WaveState {
-        Ini,
-        SpaningEnemy,
-        FinishSpawning,
-        End
+    public enum WaveState
+    {
+        INITIAL,
+        SPAWNING,
+        FINISH_SPAWNING,
+        END
     }
-    private WaveState currentState = WaveState.Ini;
-    void Awake(){
+    private WaveState currentState = WaveState.INITIAL;
+    public WaveState CurrentState => currentState;
+    void Awake()
+    {
     }
 
     void Start()
     {
     }
 
-    public void startWave(){
-        this.currentState = WaveState.SpaningEnemy;
-
+    public void StartWave()
+    {
+        currentState = WaveState.SPAWNING;
         StartCoroutine(SpawnEnemy());
     }
     private IEnumerator SpawnEnemy()
@@ -41,30 +42,22 @@ public class Wave : MonoBehaviour
             movingObject.SetLocations(moveLocations);
             yield return new WaitForSeconds(spawningCooldown);
         }
-        this.hasFinishedSpawning = true;
-        this.currentState = WaveState.FinishSpawning;
+        this.currentState = WaveState.FINISH_SPAWNING;
 
     }
     private void Update()
     {
         CleanUpNullObjects();
         if (!IsWaveCleared()) return;
-        this.currentState = WaveState.End;
+        this.currentState = WaveState.END;
 
     }
-
-    public WaveState GetState(){
-        return currentState;
-    }
-
-
-
     private void CleanUpNullObjects()
     {
         movingObjects.RemoveAll(m => m == null);
     }
     private bool IsWaveCleared()
     {
-        return hasFinishedSpawning && movingObjects.Count == 0;
+        return currentState == WaveState.FINISH_SPAWNING && movingObjects.Count == 0;
     }
 }

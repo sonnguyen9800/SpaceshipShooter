@@ -7,9 +7,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, ICharacter
 {
-    [SerializeField] private int lifepoint;
-    [SerializeField] private int armor;
-    [SerializeField] private float fireRate;
     private Health health;
     private void Awake()
     {

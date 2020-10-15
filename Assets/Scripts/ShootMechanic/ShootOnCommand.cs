@@ -16,7 +16,6 @@ public class ShootOnCommand : MonoBehaviour
         foreach (ShootComponent shootComponent in shootComponents)
         {
             shootComponent.SetOwnerType(GetComponent<ICharacter>().GetCharacterType());
-            print(gameObject.name);
         }
     }
     private void Update()
