@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf576c0d5bd08484584802015ec8832c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 200
+  maxHP: 500
 --- !u!114 &3909317631016508547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,9 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965a19963e0a91744ba267a60f3989e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifepoint: 0
-  armor: 0
-  fireRate: 0
+  explosionVFX: {fileID: 100002, guid: f7efb0d9df2264096af57128df85dddb, type: 3}
 --- !u!114 &7685691221979004483
 MonoBehaviour:
   m_ObjectHideFlags: 0
