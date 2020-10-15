@@ -679,7 +679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8255071505302886776, guid: 542e673b34eb7cf49b425563a5d737ac, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8255071505302886776, guid: 542e673b34eb7cf49b425563a5d737ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54493fe5868af6d488896dee94a01320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allWaves:
+  waves:
   - {fileID: 1055128649}
   - {fileID: 1984204302}
 --- !u!4 &1983302538
@@ -1041,8 +1041,8 @@ Transform:
   m_LocalPosition: {x: -1.3606948, y: -1.0072925, z: -3.4491348}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1984204303}
   - {fileID: 1055128650}
+  - {fileID: 1984204303}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1083,7 +1083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8255071505302886776, guid: 542e673b34eb7cf49b425563a5d737ac, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8255071505302886776, guid: 542e673b34eb7cf49b425563a5d737ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

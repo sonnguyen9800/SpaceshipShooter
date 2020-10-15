@@ -4,41 +4,63 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private List<Wave> allWaves;
-
-    private int indexWave = 0;
+    [SerializeField] private List<Wave> waves;
     private bool repeate = true;
     private Wave currentWave;
-    // Start is called before the first frame update
-    private void Awake(){
-        // Get the first wave
-        currentWave = allWaves[indexWave];
-    }
     void Start()
     {
+        NextWave();
+    }
+    void Update()
+    {
+        ProcessState();
+        if (currentWave == null) return;
+        Debug.Log(currentWave.gameObject.name + ' ' + currentWave.CurrentState);
+
+        if (currentWave.CurrentState == Wave.WaveState.INITIAL)
+        {
+            currentWave.StartWave();
+            return;
+        }
+        if (currentWave.CurrentState == Wave.WaveState.SPAWNING)
+        {
+            return;
+        }
+        if (currentWave.CurrentState == Wave.WaveState.FINISH_SPAWNING)
+        {
+            return;
+        }
+        if (currentWave.CurrentState == Wave.WaveState.END)
+        {
+            DestroyCurrentWave();
+            NextWave();
+        }
+
 
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {   
-        if (currentWave == null) return;
-        Debug.Log(currentWave.GetState());
-        if (currentWave.GetState() == Wave.WaveState.Ini){
-            // Start the state
-            currentWave.startWave();
-        } else if (currentWave.GetState() == Wave.WaveState.SpaningEnemy){
-            return;
-        } 
-        else if (currentWave.GetState() == Wave.WaveState.End && indexWave < (this.allWaves.Count-1)){
-            indexWave++;
-            currentWave = this.allWaves[indexWave];
-        } else if (currentWave.GetState() == Wave.WaveState.End && indexWave >= (this.allWaves.Count-1)) {
-            foreach(Wave wave in this.allWaves){
-                Destroy(wave.gameObject);
-            }
-        }
-       
+    private void DestroyCurrentWave()
+    {
+        // Remove first wave so next wave will be the first wave.
+        waves.Remove(currentWave);
+        Destroy(currentWave.gameObject);
+    }
+    private void NextWave()
+    {
+        if (IsAllWavesCleared()) return;
+        currentWave = waves[0];
+    }
+    private bool IsAllWavesCleared()
+    {
+        return waves.Count == 0;
+    }
+    private void ProcessState()
+    {
+        if (!IsAllWavesCleared()) return;
+        DestroyWaveManager();
+    }
+    private void DestroyWaveManager()
+    {
+        Debug.Log("Wave cleared");
+        Destroy(gameObject);
     }
 }
