@@ -5,43 +5,35 @@ using UnityEngine;
 // Attach it to game object, check if bullet hit to flash the object
 public class DamageTakenEffect : MonoBehaviour
 {
-    public float flashTime;
+    [SerializeField]
+    private float flashTime = 0.1f;
     private Color originalColor;
     private Health health;
-    private float lastHealth;
-    private new SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     [SerializeField] private Color flashColor;
-    void Start()
+    private void Awake()
     {
-        // Set default render and color
-        renderer = GetComponent<SpriteRenderer>();
-        originalColor = renderer.color;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
         health = GetComponent<Health>();
-        lastHealth = health.getHealth();
+        health.OnHealthChanged += Flash;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Flash()
     {
-        if (health.getHealth() < this.lastHealth){
-            Debug.Log("Heal is reduced");
-            this.lastHealth = health.getHealth();
-            // Health is reduced -> Do animation
-            StartCoroutine(Flash());
-        }
-
+        StartCoroutine(Flashing());
     }
 
-    private IEnumerator Flash(){
-        renderer.color = this.flashColor;
-        Invoke("ResetColor", flashTime);
-        yield return null;
-    }
-
-     void ResetColor()
+    private IEnumerator Flashing()
     {
-      renderer.color = originalColor;
+        spriteRenderer.color = flashColor;
+        yield return new WaitForSeconds(flashTime);
+        ResetColor();
     }
-    
+
+    void ResetColor()
+    {
+        spriteRenderer.color = originalColor;
+    }
+
 }
