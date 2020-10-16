@@ -20,14 +20,6 @@ public class Wave : MonoBehaviour
     }
     private WaveState currentState = WaveState.INITIAL;
     public WaveState CurrentState => currentState;
-    void Awake()
-    {
-    }
-
-    void Start()
-    {
-    }
-
     public void StartWave()
     {
         currentState = WaveState.SPAWNING;
@@ -42,22 +34,19 @@ public class Wave : MonoBehaviour
             movingObject.SetLocations(moveLocations);
             yield return new WaitForSeconds(spawningCooldown);
         }
-        this.currentState = WaveState.FINISH_SPAWNING;
+        currentState = WaveState.FINISH_SPAWNING;
 
     }
     private void Update()
     {
         CleanUpNullObjects();
-        if (!IsWaveCleared()) return;
-        this.currentState = WaveState.END;
+        if (IsWaveCleared) return;
+        currentState = WaveState.END;
 
     }
     private void CleanUpNullObjects()
     {
         movingObjects.RemoveAll(m => m == null);
     }
-    private bool IsWaveCleared()
-    {
-        return currentState == WaveState.FINISH_SPAWNING && movingObjects.Count == 0;
-    }
+    private bool IsWaveCleared => currentState == WaveState.FINISH_SPAWNING && movingObjects.Count == 0;
 }

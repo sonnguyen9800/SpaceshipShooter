@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8774a7bd2084e34b90cdbb935103476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
-  motionSpeed: 7
+  radius: 5
+  spinRate: 4
 --- !u!1001 &6656758024957891276
 PrefabInstance:
   m_ObjectHideFlags: 0

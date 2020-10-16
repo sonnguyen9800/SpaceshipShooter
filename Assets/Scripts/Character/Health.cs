@@ -26,12 +26,5 @@ public class Health : MonoBehaviour
     {
         OnDead?.Invoke();
     }
-    public float GetHealthPercentage()
-    {
-        return currentHP / maxHP;
-    }
-
-    public float getHealth(){
-        return this.currentHP;
-    }
+    public float Percentage => currentHP / maxHP;
 }

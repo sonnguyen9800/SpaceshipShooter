@@ -11,8 +11,6 @@ public class MouseLocator : MonoBehaviour
         cam = GetComponent<Camera>();
         offset = new Vector3(0, 0, cam.transform.position.z);
     }
-    public static Vector3 GetMousePosition()
-    {
-        return cam.ScreenToWorldPoint(Input.mousePosition) - offset;
-    }
+    public static Vector3 Position => cam.ScreenToWorldPoint(Input.mousePosition) - offset;
+
 }

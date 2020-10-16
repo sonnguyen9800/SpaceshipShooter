@@ -46,16 +46,13 @@ public class WaveManager : MonoBehaviour
     }
     private void NextWave()
     {
-        if (IsAllWavesCleared()) return;
+        if (IsAllWavesCleared) return;
         currentWave = waves[0];
     }
-    private bool IsAllWavesCleared()
-    {
-        return waves.Count == 0;
-    }
+    private bool IsAllWavesCleared => waves.Count == 0;
     private void ProcessState()
     {
-        if (!IsAllWavesCleared()) return;
+        if (!IsAllWavesCleared) return;
         DestroyWaveManager();
     }
     private void DestroyWaveManager()
