@@ -16,4 +16,8 @@ public class EffectOnDead : MonoBehaviour
         GameObject fx = Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Destroy(fx, 1f);
     }
+    private void OnDestroy()
+    {
+        health.OnDead -= TriggerExplosion;
+    }
 }

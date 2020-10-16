@@ -35,5 +35,9 @@ public class DamageTakenEffect : MonoBehaviour
     {
         spriteRenderer.color = originalColor;
     }
+    private void OnDestroy()
+    {
+        health.OnHealthChanged -= Flash;
+    }
 
 }

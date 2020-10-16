@@ -9,7 +9,8 @@ public class ProjectileCircleMotion : MonoBehaviour
     [SerializeField]
     private float radius = 0.3f;
     [SerializeField]
-    private float motionSpeed = Mathf.PI;
+    private float spinRate = 2;
+    private float initialAngle = 0;
     private float initialTime;
     private void Awake()
     {
@@ -20,16 +21,20 @@ public class ProjectileCircleMotion : MonoBehaviour
     {
         initialTime = Time.time;
     }
-    private float GetCurrentTime() => Time.time - initialTime;
     private void SetInitialDirection(Vector2 direction)
     {
         initialDirection = direction;
+    }
+    public void SetInitialAngle(float angle)
+    {
+        initialAngle = angle;
     }
     void Update()
     {
         projectile.SetFlyingDirection(initialDirection + new Vector2(X, Y));
     }
-    private float X => radius * Mathf.Cos(GetCurrentTime() * motionSpeed);
-    private float Y => radius * Mathf.Sin(GetCurrentTime() * motionSpeed);
+    private float CurrentTime => Time.time - initialTime;
+    private float X => radius * Mathf.Cos(CurrentTime * spinRate * Mathf.PI + Mathf.Deg2Rad * initialAngle);
+    private float Y => radius * Mathf.Sin(CurrentTime * spinRate * Mathf.PI + Mathf.Deg2Rad * initialAngle);
 
 }
