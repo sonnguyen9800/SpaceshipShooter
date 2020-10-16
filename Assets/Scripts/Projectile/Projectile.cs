@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Projectile : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float speed;
     private CharacterType ownerType;
+    private Vector2 direction;
+    public Action<Vector2> OnVelocityInitialized = delegate { };
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,12 +24,22 @@ public class Projectile : MonoBehaviour
     {
         this.ownerType = ownerType;
     }
+    public void SetInitialFlyingDirection(Vector2 shootVector)
+    {
+        SetFlyingDirection(shootVector);
+        OnVelocityInitialized?.Invoke(shootVector);
+    }
     public void SetFlyingDirection(Vector2 shootVector)
     {
-        rb.velocity = shootVector * speed;
+        direction = shootVector;
+    }
+    private void Update()
+    {
+        rb.velocity = direction * speed;
     }
 
-    public CharacterType GetOwnerType(){
+    public CharacterType GetOwnerType()
+    {
         return this.ownerType;
     }
 

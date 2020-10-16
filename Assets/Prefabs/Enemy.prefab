@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 3389049763200059793}
   - component: {fileID: 367950726337312022}
   - component: {fileID: 1502811473105031465}
+  - component: {fileID: 4671771846555658065}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -145,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3016da750fa04644081b39fc26dd59b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodingGameObject: {fileID: 100012, guid: 819eead76a69da440bde05098ab20142, type: 3}
 --- !u!114 &5492229349813338171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +217,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashTime: 0.1
   flashColor: {r: 0.9622642, g: 0.85026914, b: 0.040850822, a: 0.9019608}
+--- !u!114 &4671771846555658065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492229349813338173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99db4f5b099d9d44b8ad5be064446b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionVFX: {fileID: 100012, guid: 819eead76a69da440bde05098ab20142, type: 3}

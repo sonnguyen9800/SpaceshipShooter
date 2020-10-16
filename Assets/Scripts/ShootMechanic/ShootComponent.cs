@@ -14,7 +14,7 @@ public class ShootComponent : MonoBehaviour
     public void Shoot()
     {
         Projectile p = Instantiate(projectile, transform.position, transform.rotation);
-        p.SetFlyingDirection(transform.up);
+        p.SetInitialFlyingDirection(transform.up);
         p.SetOwnerType(ownerType);
     }
 }
