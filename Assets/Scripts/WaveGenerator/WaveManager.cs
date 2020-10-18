@@ -5,7 +5,6 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private List<Wave> waves;
-    private bool repeate = true;
     private Wave currentWave;
     void Start()
     {

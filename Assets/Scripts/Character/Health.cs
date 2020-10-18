@@ -13,6 +13,10 @@ public class Health : MonoBehaviour
     {
         currentHP = maxHP;
     }
+    private void Start()
+    {
+        OnHealthChanged?.Invoke();
+    }
     private void Update()
     {
         if (currentHP <= 0) Die();

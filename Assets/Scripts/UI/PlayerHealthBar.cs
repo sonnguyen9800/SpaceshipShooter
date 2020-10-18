@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class HealthBar : MonoBehaviour
+public class PlayerHealthBar : MonoBehaviour
 {
-    [SerializeField]
     private Health health;
     [SerializeField]
     private Image healthBar;
-    private void Awake()
+    public Health Health { get => health; set => health = value; }
+
+    private void Start()
     {
+        health = Player.Instance.Health;
         health.OnHealthChanged += UpdateHealthBar;
     }
     private void UpdateHealthBar()

@@ -13,9 +13,9 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float speed;
     private CharacterType ownerType;
-    public CharacterType OwnerType => ownerType;
     private Vector2 direction;
-    public Action<Vector2> OnVelocityInitialized = delegate { };
+    private Vector2 initialDirection;
+    public Vector2 InitialDirection => initialDirection;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,17 +23,23 @@ public class Projectile : MonoBehaviour
     }
     public void SetOwnerType(CharacterType ownerType) => this.ownerType = ownerType;
 
-    public void SetInitialFlyingDirection(Vector2 shootVector)
+    public void SetInitialDirection(Vector2 shootVector)
     {
-        SetFlyingDirection(shootVector);
-        OnVelocityInitialized?.Invoke(shootVector);
+        SetDirection(shootVector);
+        initialDirection = shootVector;
     }
-    public void SetFlyingDirection(Vector2 shootVector) => direction = shootVector;
+    public void SetDirection(Vector2 shootVector) => direction = shootVector;
 
     private void Update()
     {
         rb.velocity = direction * speed;
     }
+
+    public CharacterType GetOwnerType()
+    {
+        return this.ownerType;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Health health = other.GetComponent<Health>();

@@ -57,10 +57,10 @@ GameObject:
   - component: {fileID: 5492229349813338168}
   - component: {fileID: 5492229349813338171}
   - component: {fileID: 5492229349813338170}
-  - component: {fileID: 3389049763200059793}
   - component: {fileID: 367950726337312022}
   - component: {fileID: 1502811473105031465}
   - component: {fileID: 4671771846555658065}
+  - component: {fileID: 3654456802295557916}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -175,21 +175,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00011318922, y: 0.014886856}
   m_Size: {x: 0.5855855, y: 0.5855856}
   m_Direction: 0
---- !u!114 &3389049763200059793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492229349813338173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 088e6df8a8bdaea408c3211af4054860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseCooldown: 0.5
-  shootComponents:
-  - {fileID: 3063270567634594459}
 --- !u!114 &367950726337312022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +215,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 100012, guid: 819eead76a69da440bde05098ab20142, type: 3}
+--- !u!114 &3654456802295557916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492229349813338173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e62da7d455df2d48877aa342fb176eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseCooldown: 1
+  shootComponents:
+  - {fileID: 3063270567634594459}
+  shootConditions: []

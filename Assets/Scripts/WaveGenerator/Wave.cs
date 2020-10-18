@@ -40,7 +40,7 @@ public class Wave : MonoBehaviour
     private void Update()
     {
         CleanUpNullObjects();
-        if (IsWaveCleared) return;
+        if (!IsWaveCleared) return;
         currentState = WaveState.END;
 
     }
