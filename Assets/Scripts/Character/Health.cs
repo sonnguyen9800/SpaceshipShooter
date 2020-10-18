@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     private float maxHP = 200f;
     private float currentHP;
     public Action OnHealthChanged = delegate { };
+    public Action<float> OnDamageTaken = delegate { };
+    public Action<float> OnHeal = delegate { };
     public Action OnDead = delegate { };
     private void Awake()
     {
@@ -24,7 +26,20 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHP -= amount;
+        ClampHP();
+        OnDamageTaken?.Invoke(amount);
         OnHealthChanged?.Invoke();
+    }
+    public void Heal(float amount)
+    {
+        currentHP += amount;
+        ClampHP();
+        OnHeal?.Invoke(amount);
+        OnHealthChanged?.Invoke();
+    }
+    private void ClampHP()
+    {
+        currentHP = Mathf.Clamp(currentHP, 0, maxHP);
     }
     public void Die()
     {

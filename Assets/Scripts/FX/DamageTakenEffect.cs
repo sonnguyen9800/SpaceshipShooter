@@ -17,10 +17,11 @@ public class DamageTakenEffect : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
         health = GetComponent<Health>();
-        health.OnHealthChanged += Flash;
+        health.OnDamageTaken += Flash;
     }
-    private void Flash()
+    private void Flash(float damage)
     {
+        // Show damage popup
         StartCoroutine(Flashing());
     }
 
@@ -37,7 +38,7 @@ public class DamageTakenEffect : MonoBehaviour
     }
     private void OnDestroy()
     {
-        health.OnHealthChanged -= Flash;
+        health.OnDamageTaken -= Flash;
     }
 
 }
