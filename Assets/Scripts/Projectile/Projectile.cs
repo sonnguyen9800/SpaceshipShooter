@@ -13,33 +13,22 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float speed;
     private CharacterType ownerType;
-    private Vector2 direction;
     private Vector2 initialDirection;
-    public Vector2 InitialDirection => initialDirection;
+    private Vector2 additionalDirection;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifetime);
     }
     public void SetOwnerType(CharacterType ownerType) => this.ownerType = ownerType;
-
-    public void SetInitialDirection(Vector2 shootVector)
-    {
-        SetDirection(shootVector);
-        initialDirection = shootVector;
-    }
-    public void SetDirection(Vector2 shootVector) => direction = shootVector;
-
+    public void SetInitialDirection(Vector2 direction) => initialDirection = direction;
+    public void SetAddtionalDirection(Vector2 direction) => additionalDirection = direction;
+    private Vector2 Direction => initialDirection + additionalDirection;
     private void Update()
     {
-        rb.velocity = direction * speed;
+        rb.velocity = Direction * speed;
     }
-
-    public CharacterType GetOwnerType()
-    {
-        return this.ownerType;
-    }
-
+    public CharacterType GetOwnerType() => ownerType;
     private void OnTriggerEnter2D(Collider2D other)
     {
         Health health = other.GetComponent<Health>();

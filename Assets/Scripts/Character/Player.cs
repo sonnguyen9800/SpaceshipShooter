@@ -12,6 +12,13 @@ public class Player : MonoBehaviour, ICharacter
     public Health Health => health;
     private void Awake()
     {
+        SingletonCheck();
+        health = GetComponent<Health>();
+        health.OnDead += Die;
+
+    }
+    private void SingletonCheck()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -20,9 +27,6 @@ public class Player : MonoBehaviour, ICharacter
         {
             Destroy(gameObject);
         }
-        health = GetComponent<Health>();
-        health.OnDead += Die;
-
     }
     public CharacterType GetCharacterType()
     {

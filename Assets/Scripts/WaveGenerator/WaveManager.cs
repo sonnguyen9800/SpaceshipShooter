@@ -56,7 +56,7 @@ public class WaveManager : MonoBehaviour
     }
     private void DestroyWaveManager()
     {
-        Debug.Log("Wave cleared");
+        Debug.Log("All waves cleared.");
         Destroy(gameObject);
     }
 }

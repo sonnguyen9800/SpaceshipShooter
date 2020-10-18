@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Attach it to game object, check if bullet hit to flash the object
-public class DamageTakenEffect : MonoBehaviour
+public class EffectOnDamageTaken : MonoBehaviour
 {
     [SerializeField]
     private float flashTime = 0.1f;
@@ -11,7 +11,7 @@ public class DamageTakenEffect : MonoBehaviour
     private Health health;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
-    [SerializeField] private Color flashColor;
+    [SerializeField] private Color flashColor = Color.red;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

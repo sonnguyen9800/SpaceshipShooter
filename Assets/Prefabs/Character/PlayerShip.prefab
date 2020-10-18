@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 6740408623211321578}
   - component: {fileID: 6681154732715155642}
   - component: {fileID: 6681154732715155623}
-  - component: {fileID: 22968843561615994}
   - component: {fileID: 174344484748393184}
   - component: {fileID: 1613641588890682505}
   - component: {fileID: 3259410878552324836}
   - component: {fileID: 9202540222137643507}
+  - component: {fileID: 958651603148141398}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -135,20 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965a19963e0a91744ba267a60f3989e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &22968843561615994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449713942165450898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2d2155f5aeaa745b5aa2bffc7747ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashTime: 0.08
-  flashColor: {r: 0.8207547, g: 0.12001601, b: 0.21689238, a: 1}
 --- !u!114 &174344484748393184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +220,20 @@ MonoBehaviour:
   - {fileID: 7012343547664470006}
   shootConditions:
   - {fileID: 3259410878552324836}
+--- !u!114 &958651603148141398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449713942165450898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc7727606cbe4a44b2e6fdbe89818ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashTime: 0.1
+  flashColor: {r: 0.3490566, g: 0, b: 0, a: 1}
 --- !u!1001 &411494390297810288
 PrefabInstance:
   m_ObjectHideFlags: 0
