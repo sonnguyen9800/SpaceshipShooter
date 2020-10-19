@@ -12,6 +12,6 @@ public class MoveTowardMouse : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(Vector2.MoveTowards(transform.position, MouseLocator.Position, moveSpeed * Time.deltaTime));
+        rb.MovePosition(Vector2.MoveTowards(transform.position, MouseLocator.Position, moveSpeed * Time.fixedDeltaTime));
     }
 }

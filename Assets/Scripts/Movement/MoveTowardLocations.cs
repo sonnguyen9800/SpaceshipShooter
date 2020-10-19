@@ -22,7 +22,7 @@ public class MoveTowardLocations : MonoBehaviour
     }
     private void Move()
     {
-        rb.MovePosition(Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime));
+        rb.MovePosition(Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.fixedDeltaTime));
     }
     private bool HasReachedDestination()
     {
