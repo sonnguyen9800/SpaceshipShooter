@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MoveTowardLocations : MonoBehaviour
+[RequireComponent(typeof(CharacterStatLoader))]
+public class MoveTowardLocations : MonoBehaviour, IMoveSpeed
 {
     [SerializeField]
     private float moveSpeed;
     public List<Transform> Locations { get; set; }
+    public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     private Rigidbody2D rb;
     private int currentLocationIndex = 0;
     private Vector2 destination;

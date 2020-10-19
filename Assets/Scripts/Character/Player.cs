@@ -15,7 +15,11 @@ public class Player : MonoBehaviour, ICharacter
         SingletonCheck();
         health = GetComponent<Health>();
         health.OnDead += Die;
-
+    }
+    private void Start()
+    {
+        print(health.Life);
+        print(health.MaxHP);
     }
     private void SingletonCheck()
     {
@@ -39,5 +43,5 @@ public class Player : MonoBehaviour, ICharacter
         print("Player die.");
     }
 
-    
+
 }
