@@ -18,8 +18,9 @@ GameObject:
   - component: {fileID: 3654456802295557916}
   - component: {fileID: 2485324943461766169}
   - component: {fileID: 4697342924991036122}
+  - component: {fileID: 8044321297780641464}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: BaseEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,6 +210,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8044321297780641464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492229349813338173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc15609466838f42b74d866868e40ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 6029339388572618887, guid: 435718f700accd146b25055fc6463a6b, type: 3}
+  - {fileID: 8163629102528091384, guid: 4c0956c39a94bd942b5e23eb4b5fce7f, type: 3}
+  - {fileID: 8764715080408011139, guid: 4111f656b30395b4a811e83e9a1fd4e9, type: 3}
 --- !u!1001 &6457335471610624286
 PrefabInstance:
   m_ObjectHideFlags: 0

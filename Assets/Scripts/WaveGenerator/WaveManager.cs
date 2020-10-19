@@ -14,7 +14,7 @@ public class WaveManager : MonoBehaviour
     {
         ProcessState();
         if (currentWave == null) return;
-        Debug.Log(currentWave.gameObject.name + ' ' + currentWave.CurrentState);
+        //Debug.Log(currentWave.gameObject.name + ' ' + currentWave.CurrentState);
 
         if (currentWave.CurrentState == Wave.WaveState.INITIAL)
         {
@@ -56,7 +56,7 @@ public class WaveManager : MonoBehaviour
     }
     private void DestroyWaveManager()
     {
-        Debug.Log("All waves cleared.");
+      //  Debug.Log("All waves cleared.");
         Destroy(gameObject);
     }
 }
