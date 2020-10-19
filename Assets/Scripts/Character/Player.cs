@@ -18,8 +18,7 @@ public class Player : MonoBehaviour, ICharacter
     }
     private void Start()
     {
-        print(health.Life);
-        print(health.MaxHP);
+
     }
     private void SingletonCheck()
     {
