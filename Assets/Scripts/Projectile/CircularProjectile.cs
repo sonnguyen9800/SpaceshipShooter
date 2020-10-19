@@ -21,7 +21,7 @@ public class CircularProjectile : MonoBehaviour
         projectile.SetAddtionalDirection(new Vector2(X, Y));
     }
     private float CurrentTime => Time.time - initialTime;
-    private float CurrentAngle => CurrentTime * Motion.SpinRate * Mathf.PI * Motion.DirectionMultiplier + Mathf.Deg2Rad * Motion.InitialAngle;
+    private float CurrentAngle => CurrentTime * Motion.SpinRate * Mathf.PI + Mathf.Deg2Rad * Motion.InitialAngle;
     private float X => Motion.Radius * Mathf.Cos(CurrentAngle);
     private float Y => Mathf.Abs(Motion.Radius * Mathf.Sin(CurrentAngle));
 }
