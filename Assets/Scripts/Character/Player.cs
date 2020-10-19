@@ -38,4 +38,6 @@ public class Player : MonoBehaviour, ICharacter
         gameObject.SetActive(false);
         print("Player die.");
     }
+
+    
 }
