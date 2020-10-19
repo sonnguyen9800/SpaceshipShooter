@@ -6,22 +6,23 @@ public class MoveTowardLocations : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed;
-    private List<Transform> locations;
+    public List<Transform> Locations { get; set; }
+    private Rigidbody2D rb;
     private int currentLocationIndex = 0;
     private Vector2 destination;
-    public void SetLocations(List<Transform> locations)
+    private void Awake()
     {
-        this.locations = locations;
+        rb = GetComponent<Rigidbody2D>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        if (locations.Count == 0) return;
-        Move();
+        if (Locations.Count == 0) return;
         if (HasReachedDestination()) ChangeDestination();
+        Move();
     }
     private void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+        rb.MovePosition(Vector2.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime));
     }
     private bool HasReachedDestination()
     {
@@ -30,8 +31,8 @@ public class MoveTowardLocations : MonoBehaviour
     private void ChangeDestination()
     {
         currentLocationIndex++;
-        if (currentLocationIndex == (locations.Count - 1)) currentLocationIndex = 0;
-        destination = locations[currentLocationIndex].position;
+        if (currentLocationIndex == (Locations.Count - 1)) currentLocationIndex = 0;
+        destination = Locations[currentLocationIndex].position;
     }
 
 }

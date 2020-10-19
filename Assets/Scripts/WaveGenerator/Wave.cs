@@ -31,7 +31,7 @@ public class Wave : MonoBehaviour
         {
             MoveTowardLocations movingObject = Instantiate(enemyModel, transform.position, transform.rotation).GetComponent<MoveTowardLocations>();
             movingObjects.Add(movingObject);
-            movingObject.SetLocations(moveLocations);
+            movingObject.Locations = moveLocations;
             yield return new WaitForSeconds(spawningCooldown);
         }
         currentState = WaveState.FINISH_SPAWNING;
