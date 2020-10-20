@@ -10,31 +10,30 @@ public class Projectile : MonoBehaviour
     private float damage;
     [SerializeField]
     private float speed;
-    private CharacterType ownerType;
-    private Vector2 initialDirection;
-    private Vector2 additionalDirection;
+    public CharacterType OwnerType { get; set; }
+    public Vector2 InitialDirection { get; set; }
+    public Vector2 AdditionalDirection { get; set; }
+    public float DamageBoost { get; set; }
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifetime);
     }
-    public void SetOwnerType(CharacterType ownerType) => this.ownerType = ownerType;
-    public void SetInitialDirection(Vector2 direction) => initialDirection = direction;
-    public void SetAddtionalDirection(Vector2 direction) => additionalDirection = direction;
-    private Vector2 Direction => initialDirection + additionalDirection;
+    private Vector2 Direction => InitialDirection + AdditionalDirection;
     private void Update()
     {
         rb.velocity = Direction * speed;
     }
-    public CharacterType GetOwnerType() => ownerType;
     private void OnTriggerEnter2D(Collider2D other)
     {
         Health health = other.GetComponent<Health>();
         if (health == null) return;
         ICharacter character = other.GetComponent<ICharacter>();
         if (character == null) return;
-        if (ownerType == character.GetCharacterType()) return;
-        health.TakeDamage(damage);
+        if (OwnerType == character.GetCharacterType()) return;
+        health.TakeDamage(TotalDamage);
+        print(TotalDamage);
         Destroy(gameObject);
     }
+    private float TotalDamage => damage * (100 + DamageBoost) / 100;
 }

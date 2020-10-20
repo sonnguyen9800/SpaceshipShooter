@@ -2,33 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DamageBooster))]
 public class ShooterManager : MonoBehaviour
 {
     [SerializeField]
     private float baseCooldown;
     private float cooldown = 0;
+    private DamageBooster damageBooster;
     [SerializeField]
     private ShootComponent[] shootComponents;
     [SerializeField]
     private ShootCondition[] shootConditions;
     private void Awake()
     {
-        foreach (ShootComponent shootComponent in shootComponents)
+        foreach (var shootComponent in shootComponents)
         {
             shootComponent.OwnerType = GetComponent<ICharacter>().GetCharacterType();
         }
+        damageBooster = GetComponent<DamageBooster>();
+        damageBooster.OnDamageBoostChanged += OnDamageBoostChanged;
+        // Fetch initial value
+        OnDamageBoostChanged();
     }
     private void Update()
     {
         CooldownTick();
         if (!ConditionMet()) return;
-        foreach (ShootComponent shootComponent in shootComponents)
+        foreach (var shootComponent in shootComponents)
         {
             shootComponent.Shoot();
         }
         cooldown = baseCooldown;
     }
     private bool IsOnCooldown => cooldown > 0;
+    private void OnDamageBoostChanged()
+    {
+        foreach (var shootComponent in shootComponents)
+        {
+            shootComponent.DamageBoost = damageBooster.DamageBoost;
+        }
+    }
     private void CooldownTick()
     {
         if (IsOnCooldown) cooldown -= Time.deltaTime;
@@ -41,5 +54,9 @@ public class ShooterManager : MonoBehaviour
             if (!shootCondition.IsSatisfied()) return false;
         }
         return true;
+    }
+    private void OnDestroy()
+    {
+        damageBooster.OnDamageBoostChanged -= OnDamageBoostChanged;
     }
 }

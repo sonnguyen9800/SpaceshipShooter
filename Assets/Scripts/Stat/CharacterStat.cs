@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 [System.Serializable]
 [CreateAssetMenu(menuName = "CharacterStat")]
 public class CharacterStat : ScriptableObject
@@ -18,21 +18,4 @@ public class CharacterStat : ScriptableObject
     [SerializeField]
     private float damageBoost = 0;
     public float DamageBoost => damageBoost;
-
-}
-public interface IHealth
-{
-    float MaxHP { get; set; }
-}
-public interface IMoveSpeed
-{
-    float MoveSpeed { get; set; }
-}
-public interface IDamageBoost
-{
-    float DamageBoost { get; set; }
-}
-public interface ILife
-{
-    int Life { get; set; }
 }

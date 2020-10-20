@@ -20,6 +20,8 @@ GameObject:
   - component: {fileID: 3654456802295557916}
   - component: {fileID: 2485324943461766169}
   - component: {fileID: 8044321297780641464}
+  - component: {fileID: 8246001824756040862}
+  - component: {fileID: -7567379745244313592}
   m_Layer: 9
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -181,7 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 099138325e65ed944a496a5c8ebbb622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
 --- !u!114 &4671771846555658065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +243,32 @@ MonoBehaviour:
   - {fileID: 8163629102528091384, guid: 4c0956c39a94bd942b5e23eb4b5fce7f, type: 3}
   - {fileID: 8764715080408011139, guid: 4111f656b30395b4a811e83e9a1fd4e9, type: 3}
   rateToSpawn: 9
+--- !u!114 &8246001824756040862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492229349813338173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f24a2bbcf01ae488d927bc18408346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+--- !u!114 &-7567379745244313592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492229349813338173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201aacda249e90948937cf87d43da03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageBoost: 0
 --- !u!1001 &6457335471610624286
 PrefabInstance:
   m_ObjectHideFlags: 0

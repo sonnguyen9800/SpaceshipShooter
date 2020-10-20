@@ -7,17 +7,15 @@ public class HealItem : MonoBehaviour
 {
     [SerializeField]
     private float healAmount;
-    
     private Item item;
     private void Awake()
     {
         item = GetComponent<Item>();
-        item.OnPick += OnHealEffect;
-
+        item.OnPick += Heal;
     }
-    private void OnHealEffect(Collider2D other){
+    private void Heal(Collider2D other)
+    {
         Health health = other.GetComponent<Health>();
-        health.Heal(this.healAmount);
+        health.Heal(healAmount);
     }
-
 }

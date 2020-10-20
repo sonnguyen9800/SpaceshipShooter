@@ -9,7 +9,6 @@ public class Player : MonoBehaviour, ICharacter
 {
     public static Player Instance { get; private set; }
     private Health health;
-    public Health Health => health;
     private void Awake()
     {
         SingletonCheck();

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8163629102528091386}
   - component: {fileID: 8163629102528091387}
   - component: {fileID: 3248689194843596403}
+  - component: {fileID: -186950272617238283}
   m_Layer: 0
   m_Name: PowerPack
   m_TagString: Untagged
@@ -144,3 +145,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9c534281c01f4448045f7f8dfda5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-186950272617238283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163629102528091384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c2c4b93418bdd346af7288d9e222364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageBoost: 10
