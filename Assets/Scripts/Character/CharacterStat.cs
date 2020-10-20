@@ -7,8 +7,8 @@ using UnityEngine;
 public class CharacterStat : ScriptableObject
 {
     [SerializeField]
-    private int health = 100;
-    public int Health => health;
+    private float health = 100;
+    public float Health => health;
     [SerializeField]
     private int life = 1;
     public int Life => life;
@@ -16,13 +16,13 @@ public class CharacterStat : ScriptableObject
     private float moveSpeed = 2;
     public float MoveSpeed => moveSpeed;
     [SerializeField]
-    private int damageBoost = 0;
-    public int DamageBoost => damageBoost;
+    private float damageBoost = 0;
+    public float DamageBoost => damageBoost;
 
 }
 public interface IHealth
 {
-    int MaxHP { get; set; }
+    float MaxHP { get; set; }
 }
 public interface IMoveSpeed
 {
@@ -30,7 +30,7 @@ public interface IMoveSpeed
 }
 public interface IDamageBoost
 {
-    int DamageBoost { get; set; }
+    float DamageBoost { get; set; }
 }
 public interface ILife
 {

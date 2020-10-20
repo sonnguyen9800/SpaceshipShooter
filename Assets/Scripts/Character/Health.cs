@@ -6,11 +6,11 @@ using System;
 public class Health : MonoBehaviour, IHealth, ILife
 {
     [SerializeField]
-    private int maxHP = 200;
+    private float maxHP = 200f;
     [SerializeField]
     private int life = 1;
-    private int currentHP;
-    public int MaxHP { get => maxHP; set => maxHP = value; }
+    private float currentHP;
+    public float MaxHP { get => maxHP; set => maxHP = value; }
     public int Life { get => life; set => life = value; }
     public Action OnLifeChanged = delegate { };
     public Action OnHealthChanged = delegate { };
@@ -25,14 +25,14 @@ public class Health : MonoBehaviour, IHealth, ILife
     {
         if (currentHP <= 0) ReduceLife();
     }
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHP -= amount;
         ClampHP();
         OnDamageTaken?.Invoke(amount);
         OnHealthChanged?.Invoke();
     }
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         currentHP += amount;
         ClampHP();

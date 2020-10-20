@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     private float lifetime = 2.0f;
     private Rigidbody2D rb;
     [SerializeField]
-    private int damage;
+    private float damage;
     [SerializeField]
     private float speed;
     private CharacterType ownerType;

@@ -6,8 +6,8 @@ using UnityEngine;
 public class HealItem : MonoBehaviour
 {
     [SerializeField]
-    private int healAmount;
-
+    private float healAmount;
+    
     private Item item;
     private void Awake()
     {
@@ -15,10 +15,9 @@ public class HealItem : MonoBehaviour
         item.OnPick += OnHealEffect;
 
     }
-    private void OnHealEffect(Collider2D other)
-    {
+    private void OnHealEffect(Collider2D other){
         Health health = other.GetComponent<Health>();
-        health?.Heal(healAmount);
+        health.Heal(this.healAmount);
     }
 
 }
