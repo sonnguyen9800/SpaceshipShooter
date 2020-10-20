@@ -54,7 +54,12 @@ MonoBehaviour:
   - {fileID: 3492984852324313364}
   - {fileID: 3492984851948696122}
   - {fileID: 3492984850919037667}
-  enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
+  innerWaves:
+  - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
+    count: 4
+  - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
+    count: 2
+  movingObjects: []
 --- !u!1001 &882433996
 PrefabInstance:
   m_ObjectHideFlags: 0

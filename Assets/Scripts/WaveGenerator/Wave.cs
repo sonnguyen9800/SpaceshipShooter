@@ -5,11 +5,22 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
+    [System.Serializable]
+    private class InnerWave
+    {
+        [SerializeField]
+        private GameObject enemyModel;
+        [SerializeField]
+        private int count;
+
+        public GameObject EnemyModel { get => enemyModel; }
+        public int Count { get => count; }
+    }
     [SerializeField] private float spawningCooldown;
     [SerializeField] private int enemyCount;
     [SerializeField] private List<Transform> moveLocations;
-    [SerializeField] private GameObject enemyModel;
-    private List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
+    [SerializeField] private InnerWave[] innerWaves;
+    public List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
 
     public enum WaveState
     {
@@ -27,15 +38,17 @@ public class Wave : MonoBehaviour
     }
     private IEnumerator SpawnEnemy()
     {
-        for (int i = 0; i < enemyCount; i++)
+        foreach (var innerWave in innerWaves)
         {
-            MoveTowardLocations movingObject = Instantiate(enemyModel, transform.position, transform.rotation).GetComponent<MoveTowardLocations>();
-            movingObjects.Add(movingObject);
-            movingObject.Locations = moveLocations;
-            yield return new WaitForSeconds(spawningCooldown);
+            for (int i = 0; i < innerWave.Count; i++)
+            {
+                MoveTowardLocations movingObject = Instantiate(innerWave.EnemyModel, transform.position, transform.rotation).GetComponent<MoveTowardLocations>();
+                movingObjects.Add(movingObject);
+                movingObject.Locations = moveLocations;
+                yield return new WaitForSeconds(spawningCooldown);
+            }
         }
         currentState = WaveState.FINISH_SPAWNING;
-
     }
     private void Update()
     {
