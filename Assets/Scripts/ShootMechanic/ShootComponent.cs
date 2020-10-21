@@ -15,9 +15,7 @@ public class ShootComponent : MonoBehaviour
         Projectile p = ProjectilePooler.Instance.Get(projectileType);
         p.transform.position = transform.position;
         p.transform.rotation = transform.rotation;
-        
-        Rigidbody2D Prb = p.GetComponent<Rigidbody2D>();
-        Prb.AddForce(new Vector2(0, 40f), ForceMode2D.Impulse);
+
 
         p.LoadFromSettings(new Projectile.Settings
         {
@@ -27,6 +25,14 @@ public class ShootComponent : MonoBehaviour
             ProjectileType = this.projectileType
         });
         p.gameObject.SetActive(true);
+
+        if (this.projectileType == ProjectileType.PlayerBase){
+            Debug.Log("Activate");
+            Rigidbody2D Prb = p.GetComponent<Rigidbody2D>();
+            Prb.AddForce(new Vector2(40000, 4000f), ForceMode2D.Impulse);
+
+        }
+
         OnProjectileShoot?.Invoke(p);
     }
 }
