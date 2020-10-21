@@ -8,6 +8,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, ICharacter
 {
     public static Player Instance { get; private set; }
+    public CharacterType CharacterType => CharacterType.Player;
     private Health health;
     private void Awake()
     {
@@ -30,11 +31,6 @@ public class Player : MonoBehaviour, ICharacter
             Destroy(gameObject);
         }
     }
-    public CharacterType GetCharacterType()
-    {
-        return CharacterType.PLAYER;
-    }
-
     private void Die()
     {
         gameObject.SetActive(false);

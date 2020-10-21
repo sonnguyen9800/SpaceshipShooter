@@ -1,9 +1,9 @@
 ﻿public enum CharacterType
 {
-    PLAYER,
-    ENEMY
+    Player,
+    Enemy
 }
 public interface ICharacter
 {
-    CharacterType GetCharacterType();
+    CharacterType CharacterType { get; }
 }

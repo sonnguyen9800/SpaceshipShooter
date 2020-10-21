@@ -3,21 +3,18 @@ public class Enemy : MonoBehaviour, ICharacter
 {
     private Health health;
 
-    public CharacterType GetCharacterType()
-    {
-        return CharacterType.ENEMY;
-    }
-    void Awake()
+    public CharacterType CharacterType => CharacterType.Enemy;
+    private void Awake()
     {
         health = GetComponent<Health>();
         health.OnDead += Die;
     }
-    void Update()
+    private void Update()
     {
 
     }
     private void Die()
-    {   
+    {
         Destroy(gameObject);
     }
 }

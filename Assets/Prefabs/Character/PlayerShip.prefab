@@ -585,10 +585,10 @@ RectTransform:
   m_Father: {fileID: 144742570112124408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.9, y: 0.1}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5455786797832337497
 CanvasRenderer:
@@ -793,6 +793,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 8294712995102943195, guid: 02853b4b49e01744f89be2d7c51e287e, type: 3}
+    - target: {fileID: 1575952159240989917, guid: 9004849b96212294ba55afd681db38cf, type: 3}
+      propertyPath: projectileType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8119625969404139250, guid: 9004849b96212294ba55afd681db38cf, type: 3}
       propertyPath: m_Name
       value: PlayerMiddleRightClick

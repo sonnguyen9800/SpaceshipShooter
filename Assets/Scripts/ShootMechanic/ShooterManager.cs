@@ -17,7 +17,7 @@ public class ShooterManager : MonoBehaviour
     {
         foreach (var shootComponent in shootComponents)
         {
-            shootComponent.OwnerType = GetComponent<ICharacter>().GetCharacterType();
+            shootComponent.OwnerType = GetComponent<ICharacter>().CharacterType;
         }
         damageBooster = GetComponent<DamageBooster>();
         damageBooster.OnDamageBoostChanged += OnDamageBoostChanged;
