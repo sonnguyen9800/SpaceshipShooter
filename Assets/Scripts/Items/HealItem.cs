@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Item))]
 public class HealItem : MonoBehaviour
@@ -16,6 +14,10 @@ public class HealItem : MonoBehaviour
     private void Heal(Collider2D other)
     {
         Health health = other.GetComponent<Health>();
+        
         health.Heal(healAmount);
+        GameObject otherGameObject = health.transform.gameObject;
+        EffectMaker.Instance.spawnEffect(otherGameObject, EffectType.HPUp);
+
     }
 }
