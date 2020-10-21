@@ -4,8 +4,7 @@ using UnityEngine;
 public class ItemSpawning : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] List<GameObject> itemList;
-    [SerializeField] int rateToSpawn;
+    [SerializeField] private ItemFactory itemFactory;
     private Health health;
 
     void Awake()
@@ -16,10 +15,9 @@ public class ItemSpawning : MonoBehaviour
 
     private void DropItem()
     {
-        float randomValue = Random.Range(0f, 1f);
-        if (randomValue > rateToSpawn) return;
-        int randomIndex = Random.Range(0, itemList.Count);
-        Instantiate(itemList[randomIndex], transform.position, transform.rotation);
+        GameObject g = itemFactory.GetRandomItem();
+        if (g == null) return;
+        Instantiate(g, transform.position, transform.rotation);
     }
     private void OnDestroy()
     {

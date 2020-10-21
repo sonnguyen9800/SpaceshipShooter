@@ -13,8 +13,8 @@ public class Wave : MonoBehaviour
         [SerializeField]
         private int count;
 
-        public GameObject EnemyModel { get => enemyModel; }
-        public int Count { get => count; }
+        public GameObject EnemyModel => enemyModel;
+        public int Count => count;
     }
     [SerializeField] private float spawningCooldown;
     [SerializeField] private int enemyCount;

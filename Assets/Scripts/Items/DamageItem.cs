@@ -11,7 +11,6 @@ public class DamageItem : MonoBehaviour
     {
         item = GetComponent<Item>();
         item.OnPick += IncreaseDamage;
-
     }
     private void IncreaseDamage(Collider2D other)
     {

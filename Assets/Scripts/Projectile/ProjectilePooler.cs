@@ -1,30 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum ProjectileType
-{
-    PlayerBase,
-    PlayerEnhanced,
-    EnemyBase
-}
+
 public class ProjectilePooler : MonoBehaviour
 {
-    [System.Serializable]
-    private class Pool
-    {
-        [SerializeField]
-        private ProjectileType type;
 
-        public ProjectileType Type => type;
-        [SerializeField]
-        private Projectile projectile;
-        public Projectile Projectile => projectile;
-        [SerializeField]
-        private int initialCount;
-        public int InitialCount => initialCount;
-    }
     [SerializeField]
-    private Pool[] pools;
+    private ProjectilePoolerProperties properties;
     private Dictionary<ProjectileType, Queue<Projectile>> poolDictionary;
     private Dictionary<ProjectileType, Projectile> projectileDictionary;
     public static ProjectilePooler Instance { get; private set; }
@@ -43,7 +25,7 @@ public class ProjectilePooler : MonoBehaviour
     {
         projectileDictionary = new Dictionary<ProjectileType, Projectile>();
         poolDictionary = new Dictionary<ProjectileType, Queue<Projectile>>();
-        foreach (var pool in pools)
+        foreach (var pool in properties.Pools)
         {
             projectileDictionary.Add(pool.Type, pool.Projectile);
             Queue<Projectile> queue = new Queue<Projectile>();
