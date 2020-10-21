@@ -1,5 +1,4 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "EffectFactory", fileName = "effectFactory")]
 
 public class EffectMaker : MonoBehaviour
 {
@@ -7,7 +6,8 @@ public class EffectMaker : MonoBehaviour
     public static EffectMaker Instance { get; private set; }
     [SerializeField] private EffectFactory effectFactory;
 
-    public void spawnEffect(GameObject otherTransform, EffectType effect){
+    public void spawnEffect(GameObject otherTransform, EffectType effect)
+    {
 
         GameObject go = Instantiate(effectMonoGameObject, this.transform.position, this.transform.rotation);
         EffectMono effectMono = go.GetComponent<EffectMono>();
@@ -16,7 +16,7 @@ public class EffectMaker : MonoBehaviour
         effectMono.callEffect();
     }
 
-     private void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {

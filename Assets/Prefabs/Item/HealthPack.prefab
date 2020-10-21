@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthPack
       objectReference: {fileID: 0}
+    - target: {fileID: 6937163847989496307, guid: 435718f700accd146b25055fc6463a6b, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 100008, guid: e3d819d8722fa1f47a3f68574b56dfb3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435718f700accd146b25055fc6463a6b, type: 3}
 --- !u!1 &8715556759474365498 stripped
