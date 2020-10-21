@@ -15,6 +15,10 @@ public class ShootComponent : MonoBehaviour
         Projectile p = ProjectilePooler.Instance.Get(projectileType);
         p.transform.position = transform.position;
         p.transform.rotation = transform.rotation;
+        
+        Rigidbody2D Prb = p.GetComponent<Rigidbody2D>();
+        Prb.AddForce(new Vector2(0, 40f), ForceMode2D.Impulse);
+
         p.LoadFromSettings(new Projectile.Settings
         {
             InitialDirection = transform.up,
