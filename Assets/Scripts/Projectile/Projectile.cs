@@ -22,7 +22,6 @@ public class Projectile : MonoBehaviour
         public Vector2 InitialDirection { get; set; }
         public float DamageBoost { get; set; }
         public ProjectileType ProjectileType { get; set; }
-        public ProjectilePooler Pooler { get; set; }
     }
     public void LoadFromSettings(Projectile.Settings settings)
     {
@@ -35,7 +34,7 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    private Vector2 Direction => InitialDirection + AdditionalDirection;
+    private Vector2 Direction => (InitialDirection + AdditionalDirection).normalized;
     private void OnEnable()
     {
         elapsed = 0f;
