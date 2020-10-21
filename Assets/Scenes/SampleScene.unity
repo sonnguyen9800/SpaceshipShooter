@@ -534,10 +534,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectilePool
       objectReference: {fileID: 0}
-    - target: {fileID: 8715208582687306816, guid: f5ade1a09d9fa164280cc2c87631bfda, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8715208582687306818, guid: f5ade1a09d9fa164280cc2c87631bfda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
