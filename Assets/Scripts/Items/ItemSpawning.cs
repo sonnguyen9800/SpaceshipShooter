@@ -15,9 +15,17 @@ public class ItemSpawning : MonoBehaviour
 
     private void DropItem()
     {
-        GameObject g = itemFactory.GetRandomItem();
-        if (g == null) return;
-        Instantiate(g, transform.position, transform.rotation);
+        // GameObject g = itemFactory.GetRandomItem();
+        // if (g == null) return;
+        // Instantiate(g, transform.position, transform.rotation);
+
+        List<GameObject> items = itemFactory.GetRandomItems();
+        if (items == null || items.Count == 0) return;
+        foreach (GameObject item in items){
+            GameObject i =  Instantiate(item, transform.position, transform.rotation );
+            Rigidbody2D body = i.GetComponent<Rigidbody2D>();
+            body.AddForce(new Vector2(Random.Range(-1f,1f), 0), ForceMode2D.Impulse);
+        }
     }
     private void OnDestroy()
     {
