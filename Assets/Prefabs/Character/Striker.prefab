@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e62da7d455df2d48877aa342fb176eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCooldown: 1
+  baseCooldown: 0.5
   shootComponents:
   - {fileID: 5760278644680370611}
   - {fileID: 8795007115146962156}
