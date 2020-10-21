@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerUpgrade : MonoBehaviour, IUpgradeComponent
+using System;
+public class PlayerLevel : MonoBehaviour, IUpgradeComponent
 {
     [SerializeField]
     private int level = 1;
+    public int Level => level;
+    public Action OnLevelChanged { get; set; }
     [SerializeField]
     private ShooterManager primaryShootManager;
     private void Start()
     {
+        OnLevelChanged += ProcessLevelPower;
         ProcessLevelPower();
     }
     public void Upgrade()
     {
+        LevelUp();
+    }
+    public void LevelUp()
+    {
         level++;
-        ProcessLevelPower();
+        OnLevelChanged?.Invoke();
     }
     private void ProcessLevelPower()
     {
@@ -24,5 +31,9 @@ public class PlayerUpgrade : MonoBehaviour, IUpgradeComponent
         {
             primaryShootManager.EnableShootComponent(i);
         }
+    }
+    private void OnDestroy()
+    {
+        OnLevelChanged -= ProcessLevelPower;
     }
 }

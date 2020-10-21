@@ -11,20 +11,25 @@ public class PlayerStatUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lifeText;
     [SerializeField] private TextMeshProUGUI damageBoostText;
     [SerializeField] private TextMeshProUGUI moveSpeedText;
+    [SerializeField] private TextMeshProUGUI levelText;
+
     private Health health;
     private MoveComponent moveComponent;
     private DamageBooster damageBooster;
+    private PlayerLevel playerLevel;
     private void Start()
     {
         Player player = Player.Instance;
         health = player.GetComponent<Health>();
         moveComponent = player.GetComponent<MoveComponent>();
         damageBooster = player.GetComponent<DamageBooster>();
+        playerLevel = player.GetComponent<PlayerLevel>();
 
         health.OnHealthChanged += UpdateHealthBar;
         health.OnLifeChanged += UpdateLifeText;
         moveComponent.OnMoveSpeedChanged += UpdateMoveSpeedText;
         damageBooster.OnDamageBoostChanged += UpdateDamageBoostText;
+        playerLevel.OnLevelChanged += UpdateLevelText;
         UpdateAll();
     }
 
@@ -34,6 +39,11 @@ public class PlayerStatUI : MonoBehaviour
         UpdateMoveSpeedText();
         UpdateLifeText();
         UpdateHealthBar();
+        UpdateLevelText();
+    }
+    private void UpdateLevelText()
+    {
+        levelText.SetText(playerLevel.Level.ToString());
     }
 
     private void UpdateDamageBoostText()
@@ -43,7 +53,7 @@ public class PlayerStatUI : MonoBehaviour
 
     private void UpdateMoveSpeedText()
     {
-        moveSpeedText.SetText(String.Format("Speed: {0}", moveComponent.MoveSpeed.ToString()));
+        moveSpeedText.SetText(String.Format("Speed: {0:0.00}", moveComponent.MoveSpeed.ToString()));
     }
 
     private void UpdateLifeText()
@@ -61,5 +71,6 @@ public class PlayerStatUI : MonoBehaviour
         health.OnLifeChanged -= UpdateLifeText;
         moveComponent.OnMoveSpeedChanged -= UpdateMoveSpeedText;
         damageBooster.OnDamageBoostChanged -= UpdateDamageBoostText;
+        playerLevel.OnLevelChanged -= UpdateLevelText;
     }
 }
