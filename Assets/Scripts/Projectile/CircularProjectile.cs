@@ -12,9 +12,14 @@ public class CircularProjectile : MonoBehaviour
     {
         projectile = GetComponent<Projectile>();
     }
-    private void Start()
+    private void OnEnable()
     {
         initialTime = Time.time;
+    }
+    private void OnDisable()
+    {
+        projectile.AdditionalDirection = Vector2.zero;
+        Destroy(this);
     }
     private void Update()
     {

@@ -24,8 +24,9 @@ public class ItemSpawning : MonoBehaviour
         foreach (GameObject item in items){
             GameObject i =  Instantiate(item, transform.position, transform.rotation );
             Rigidbody2D body = i.GetComponent<Rigidbody2D>();
-            body.AddForce(new Vector2(Random.Range(-1f,1f), 0), ForceMode2D.Impulse);
+            body.AddForce(new Vector2(Random.Range(-1.5f,1.5f), 0), ForceMode2D.Impulse);
         }
+        
     }
     private void OnDestroy()
     {
