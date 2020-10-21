@@ -53,12 +53,12 @@ public class PlayerStatUI : MonoBehaviour
 
     private void UpdateMoveSpeedText()
     {
-        moveSpeedText.SetText(String.Format("Speed: {0:0.00}", moveComponent.MoveSpeed.ToString()));
+        moveSpeedText.SetText(String.Format("Speed: {0:0.00}", moveComponent.MoveSpeed));
     }
 
     private void UpdateLifeText()
     {
-        lifeText.SetText(String.Format("Life: {0}", health.Life.ToString()));
+        lifeText.SetText(String.Format("Life: {0}", (int)health.Life));
     }
 
     private void UpdateHealthBar()
