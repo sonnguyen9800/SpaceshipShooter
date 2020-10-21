@@ -24,6 +24,8 @@ public class ShooterManager : MonoBehaviour
         // Fetch initial value
         OnDamageBoostChanged();
     }
+
+
     private void Update()
     {
         CooldownTick();
@@ -59,4 +61,27 @@ public class ShooterManager : MonoBehaviour
     {
         damageBooster.OnDamageBoostChanged -= OnDamageBoostChanged;
     }
+    public void DisableAllShootComponent()
+    {
+        for (int i = 0; i < ShootComponentCount; i++)
+        {
+            DisableShootComponent(i);
+        }
+    }
+    public void DisableShootComponent(int index)
+    {
+        shootComponents[index].IsActive = false;
+    }
+    public void EnableShootComponent(int index)
+    {
+        shootComponents[index].IsActive = true;
+    }
+    public void EnableAllShootComponent()
+    {
+        for (int i = 0; i < ShootComponentCount; i++)
+        {
+            EnableShootComponent(i);
+        }
+    }
+    public int ShootComponentCount => shootComponents.Length;
 }

@@ -8,9 +8,12 @@ public class ShootComponent : MonoBehaviour
     private ProjectileType projectileType;
     public float DamageBoost { get; set; }
     public CharacterType OwnerType { get; set; }
+    private bool isActive = true;
+    public bool IsActive { get => isActive; set => isActive = value; }
     public Action<Projectile> OnProjectileShoot = delegate { };
     public void Shoot()
     {
+        if (!IsActive) return;
         Projectile p = ProjectilePooler.Instance.Get(projectileType);
         p.transform.position = transform.position;
         p.transform.rotation = transform.rotation;
