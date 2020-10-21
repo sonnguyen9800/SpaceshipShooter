@@ -218,8 +218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCooldown: 0.1
   shootComponents:
-  - {fileID: 7870286491322605224}
   - {fileID: 1183043537698421165}
+  - {fileID: 7870286491322605224}
   - {fileID: 7012343547664470006}
   shootConditions:
   - {fileID: 3259410878552324836}
