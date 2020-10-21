@@ -26,6 +26,10 @@ public class PlayerLevel : MonoBehaviour, IUpgradeComponent
     }
     private void ProcessLevelPower()
     {
+        ProcessPrimaryShootManager();
+    }
+    private void ProcessPrimaryShootManager()
+    {
         primaryShootManager.DisableAllShootComponent();
         for (int i = 0; i < Mathf.Min(primaryShootManager.ShootComponentCount, level); i++)
         {
