@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedPack
       objectReference: {fileID: 0}
+    - target: {fileID: 6937163847989496307, guid: 435718f700accd146b25055fc6463a6b, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 1750940742320366, guid: 961b47728ad7fd147b31d83b23baf49c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435718f700accd146b25055fc6463a6b, type: 3}
 --- !u!1 &6383392220131520502 stripped

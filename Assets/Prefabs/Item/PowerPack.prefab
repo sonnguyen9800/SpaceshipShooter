@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerPack
       objectReference: {fileID: 0}
+    - target: {fileID: 6937163847989496307, guid: 435718f700accd146b25055fc6463a6b, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 8871211052307056528, guid: f10d3f223e7ae2e4490d7c5dc0db9cd3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435718f700accd146b25055fc6463a6b, type: 3}
 --- !u!1 &3985371167466216751 stripped

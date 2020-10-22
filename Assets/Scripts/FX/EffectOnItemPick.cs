@@ -9,7 +9,6 @@ public class EffectOnItemPick : MonoBehaviour
     [SerializeField]
     private GameObject effect;
     private Item item;
-    private float duration = 1.5f;
     private void Awake()
     {
         item = GetComponent<Item>();
@@ -19,8 +18,7 @@ public class EffectOnItemPick : MonoBehaviour
     private void GrantEffect(Collider2D other)
     {
         if (effect == null) return;
-        GameObject g = Instantiate(effect, other.transform.position, other.transform.rotation, other.transform);
-        Destroy(g, duration);
+        Instantiate(effect, other.transform.position, other.transform.rotation, other.transform);
     }
     private void OnDestroy()
     {
