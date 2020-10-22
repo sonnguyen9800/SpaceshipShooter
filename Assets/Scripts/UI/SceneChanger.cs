@@ -5,13 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public void startCampaign()
+    private const string sceneSelectKey = "Scene";
+    public void LoadSceneByName(string name)
     {
-        SceneManager.LoadScene("Scene/Campaign List");
+        SceneManager.LoadScene(name, LoadSceneMode.Single);
     }
-
-
-    public void exitGame()
+    public void SelectScene(string name)
+    {
+        PlayerPrefs.SetString(sceneSelectKey, name);
+    }
+    public void LoadSelectedScene()
+    {
+        LoadSceneByName(PlayerPrefs.GetString(sceneSelectKey));
+    }
+    public void Quit()
     {
         Application.Quit();
     }
