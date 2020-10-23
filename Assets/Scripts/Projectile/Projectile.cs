@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, ICollideBoundary
 {
     [SerializeField]
     private float lifetime = 2.0f;
@@ -16,12 +15,15 @@ public class Projectile : MonoBehaviour
     public float DamageBoost { get; private set; }
     public ProjectileType ProjectileType { get; private set; }
     public Vector2 AdditionalDirection { get; set; }
+    public ProjectilePooler Pooler { get; private set; }
+
     public class Settings
     {
         public CharacterType OwnerType { get; set; }
         public Vector2 InitialDirection { get; set; }
         public float DamageBoost { get; set; }
         public ProjectileType ProjectileType { get; set; }
+        public ProjectilePooler Pooler { get; set; }
     }
     public void LoadFromSettings(Projectile.Settings settings)
     {
@@ -29,6 +31,7 @@ public class Projectile : MonoBehaviour
         OwnerType = settings.OwnerType;
         DamageBoost = settings.DamageBoost;
         ProjectileType = settings.ProjectileType;
+        Pooler = settings.Pooler;
     }
     private void Awake()
     {
@@ -57,12 +60,18 @@ public class Projectile : MonoBehaviour
         if (character == null) return;
         if (OwnerType == character.CharacterType) return;
         health.TakeDamage(TotalDamage);
-        print(TotalDamage);
+        // print(TotalDamage);
         ReturnToPool();
     }
     private void ReturnToPool()
     {
-        ProjectilePooler.Instance.ReturnToPool(this);
+        Pooler.ReturnToPool(this);
     }
+
+    public void OnCollisionWithBoundary()
+    {
+        ReturnToPool();
+    }
+
     private float TotalDamage => damage * (100 + DamageBoost) / 100;
 }

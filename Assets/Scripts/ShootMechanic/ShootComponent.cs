@@ -48,7 +48,8 @@ public class ShootComponent : MonoBehaviour
             InitialDirection = transform.up,
             OwnerType = this.OwnerType,
             DamageBoost = this.DamageBoost,
-            ProjectileType = this.projectileType
+            ProjectileType = this.projectileType,
+            Pooler = this.pooler
         });
         p.gameObject.SetActive(true);
         OnProjectileShoot?.Invoke(p);

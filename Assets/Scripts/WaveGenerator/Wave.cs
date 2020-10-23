@@ -12,13 +12,13 @@ public class Wave : MonoBehaviour
         private GameObject enemyModel;
         [SerializeField]
         private int count;
-
+        [SerializeField]
+        private float cooldown;
         public GameObject EnemyModel => enemyModel;
         public int Count => count;
+        public float Cooldown => cooldown;
     }
-    [SerializeField] private float spawningCooldown;
-    [SerializeField] private int enemyCount;
-    [SerializeField] private List<Transform> moveLocations;
+    private Transform[] moveLocations;
     [SerializeField] private InnerWave[] innerWaves;
     public List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
 
@@ -31,6 +31,10 @@ public class Wave : MonoBehaviour
     }
     private WaveState currentState = WaveState.INITIAL;
     public WaveState CurrentState => currentState;
+    private void Awake()
+    {
+        moveLocations = GetComponentsInChildren<Transform>();
+    }
     public void StartWave()
     {
         currentState = WaveState.SPAWNING;
@@ -45,7 +49,7 @@ public class Wave : MonoBehaviour
                 MoveTowardLocations movingObject = Instantiate(innerWave.EnemyModel, transform.position, transform.rotation).GetComponent<MoveTowardLocations>();
                 movingObjects.Add(movingObject);
                 movingObject.Locations = moveLocations;
-                yield return new WaitForSeconds(spawningCooldown);
+                yield return new WaitForSeconds(innerWave.Cooldown);
             }
         }
         currentState = WaveState.FINISH_SPAWNING;
