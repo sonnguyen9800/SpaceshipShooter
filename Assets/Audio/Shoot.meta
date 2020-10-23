@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Audio/Shoot.meta
 guid: 10196dd6f7ab2a24e819cf47877e9dec
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 26b79cbe91f8b6d40a5dbeaf50407b92
+NativeFormatImporter:
+>>>>>>> a803ad7e6ed6d53d4c7ca951fcc0a19bae8a60ca:Assets/ScriptableObjects/Stat/Destroyer.asset.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
