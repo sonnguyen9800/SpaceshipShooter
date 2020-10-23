@@ -5,13 +5,3 @@ public enum SceneEnum {
     OpeningScene, 
     Campain1, 
 }
-
-public class Scene{
-    
-    //public static string LEVEL_1 = "1";
-
-    public static string GetString(SceneEnum scene){
-        return scene.ToString();
-    }
-}
-

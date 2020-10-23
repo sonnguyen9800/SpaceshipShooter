@@ -1,17 +1,44 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
+
+[RequireComponent(typeof(AudioSource))]
 public class ShootComponent : MonoBehaviour
 {
     [SerializeField]
     private ProjectileType projectileType;
+
+    private AudioSource audioSource;
+
+
+    [SerializeField] private AudioClip shootSound;
+
     public float DamageBoost { get; set; }
     public CharacterType OwnerType { get; set; }
     private bool isActive = true;
     public bool IsActive { get => isActive; set => isActive = value; }
     public Action<Projectile> OnProjectileShoot = delegate { };
+
+
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = shootSound;
+    }
+    
+    IEnumerator SoundOnShoot()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+    }
+    
     public void Shoot()
     {
         if (!IsActive) return;
+
+        if (shootSound != null) {
+            StartCoroutine(SoundOnShoot());
+        }
+
         Projectile p = ProjectilePooler.Instance.Get(projectileType);
         p.transform.position = transform.position;
         p.transform.rotation = transform.rotation;
