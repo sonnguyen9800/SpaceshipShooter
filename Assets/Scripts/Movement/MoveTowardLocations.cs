@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MoveComponent))]
 public class MoveTowardLocations : MonoBehaviour
 {
-    public List<Transform> Locations { get; set; }
+    public Transform[] Locations { get; set; }
     private int currentLocationIndex = 0;
     private Vector2 destination;
     private MoveComponent moveComponent;
@@ -14,9 +14,13 @@ public class MoveTowardLocations : MonoBehaviour
     {
         moveComponent = GetComponent<MoveComponent>();
     }
+    private void Start()
+    {
+        ChangeDestination();
+    }
     private void FixedUpdate()
     {
-        if (Locations.Count == 0) return;
+        if (Locations.Length == 0) return;
         if (HasReachedDestination()) ChangeDestination();
         moveComponent.MoveToward(destination);
     }
@@ -27,9 +31,7 @@ public class MoveTowardLocations : MonoBehaviour
     }
     private void ChangeDestination()
     {
-        currentLocationIndex++;
-        if (currentLocationIndex == (Locations.Count - 1)) currentLocationIndex = 0;
-        destination = Locations[currentLocationIndex].position;
+        destination = Locations[UnityEngine.Random.Range(0, Locations.Length - 1)].position;
     }
 
 }

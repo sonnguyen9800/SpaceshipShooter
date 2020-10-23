@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private List<Wave> waves;
     private Wave currentWave;
+    public int CurrentWaveIndex { get; private set; }
+    public Action OnWaveChanged { get; set; }
+    public Action OnFinished;
+    public int WaveCount => waves.Count;
     void Start()
     {
-        NextWave();
+        CurrentWaveIndex = 0;
+        currentWave = waves[CurrentWaveIndex];
     }
     void Update()
     {
@@ -39,24 +44,25 @@ public class WaveManager : MonoBehaviour
     }
     private void DestroyCurrentWave()
     {
-        // Remove first wave so next wave will be the first wave.
-        waves.Remove(currentWave);
         Destroy(currentWave.gameObject);
     }
     private void NextWave()
     {
+        CurrentWaveIndex++;
         if (IsAllWavesCleared) return;
-        currentWave = waves[0];
+        currentWave = waves[CurrentWaveIndex];
+        OnWaveChanged?.Invoke();
     }
-    private bool IsAllWavesCleared => waves.Count == 0;
+    private bool IsAllWavesCleared => CurrentWaveIndex == waves.Count - 1;
     private void ProcessState()
     {
         if (!IsAllWavesCleared) return;
+        OnFinished?.Invoke();
         DestroyWaveManager();
     }
     private void DestroyWaveManager()
     {
-      //  Debug.Log("All waves cleared.");
+        //  Debug.Log("All waves cleared.");
         Destroy(gameObject);
     }
 }

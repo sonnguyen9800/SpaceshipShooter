@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5492229349813338166}
   - component: {fileID: 5492229349813338169}
-  - component: {fileID: 5492229349813338170}
   - component: {fileID: 4697342924991036122}
+  - component: {fileID: 6578062335486134198}
   - component: {fileID: -3589330605760820393}
   - component: {fileID: 5492229349813338168}
   - component: {fileID: 5492229349813338171}
@@ -38,8 +38,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5492229349813338173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.193, y: 4.63, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7442384400029250564}
   - {fileID: 2324650200499771837}
@@ -99,22 +99,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &5492229349813338170
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5492229349813338173}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00011318922, y: 0.014886856}
-  m_Size: {x: 0.5855855, y: 0.5855856}
-  m_Direction: 0
 --- !u!50 &4697342924991036122
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +120,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &6578062335486134198
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492229349813338173}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.38
 --- !u!114 &-3589330605760820393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6f5a1a15c87d045b0ea2ff2056c27a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stat: {fileID: 11400000, guid: c5d0d27d3ec1c8249a3266c14d0f797e, type: 2}
+  stat: {fileID: 11400000, guid: 26b79cbe91f8b6d40a5dbeaf50407b92, type: 2}
 --- !u!114 &5492229349813338168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0647984465fae43adb59a91acf973d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 200
+  rotateSpeed: 360
 --- !u!1001 &116452044197279818
 PrefabInstance:
   m_ObjectHideFlags: 0

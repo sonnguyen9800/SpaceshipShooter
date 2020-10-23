@@ -17,7 +17,7 @@ public class ItemSpawning : MonoBehaviour
         if (items == null || items.Count == 0) return;
         foreach (GameObject item in items)
         {
-            GameObject g = Instantiate(item, transform.position, transform.rotation);
+            GameObject g = Instantiate(item, transform.position, Quaternion.identity);
             Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
             rb.AddForce(new Vector2(Random.Range(-1.5f, 1.5f), 0), ForceMode2D.Impulse);
         }
