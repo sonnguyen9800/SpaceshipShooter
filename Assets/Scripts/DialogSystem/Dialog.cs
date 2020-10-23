@@ -48,7 +48,7 @@ public class Dialog : MonoBehaviour
             index ++;
             StartCoroutine(Type());
         } else {
-            SceneManager.LoadScene(SceneEnum.OpeningScene.ToString());
+            // SceneManager.LoadScene(SceneEnum.OpeningScene.ToString());
         }
     }
 
