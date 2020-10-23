@@ -5,6 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< Updated upstream
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 615af4296a5ac834687d398ddd910d54
@@ -17,4 +18,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 725f3837da22d784ca915eb6d3130f03
+=======
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 615af4296a5ac834687d398ddd910d54
+  - enabled: 1
+    path: Assets/Scenes/OpeningDialog.unity
+    guid: fed0afb6dd4f1d54f894d69e827f7211
+  - enabled: 1
+    path: Assets/Scenes/OpeningScene.unity
+    guid: 3b12e74d86e469646b6f82906628063f
+  - enabled: 1
+    path: Assets/Scenes/Campain1.unity
+    guid: 187264a9e8d7b8f4b9ea496f1520bd81
+>>>>>>> Stashed changes
   m_configObjects: {}

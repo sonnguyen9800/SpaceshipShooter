@@ -4,7 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 public class Dialog : MonoBehaviour
+<<<<<<< Updated upstream
 {   
+=======
+{
+>>>>>>> Stashed changes
     public TextMeshProUGUI textDisplay;
 
     [SerializeField]
