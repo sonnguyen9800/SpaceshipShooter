@@ -31,6 +31,11 @@ public class ShootComponent : MonoBehaviour
         yield return new WaitForSeconds(audioSource.clip.length);
     }
     
+    private ProjectilePooler pooler;
+    private void Start()
+    {
+        pooler = ProjectilePooler.Instance;
+    }
     public void Shoot()
     {
         if (!IsActive) return;
