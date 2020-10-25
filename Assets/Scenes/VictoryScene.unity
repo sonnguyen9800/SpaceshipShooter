@@ -157,12 +157,12 @@ RectTransform:
   m_Children:
   - {fileID: 1949370257}
   m_Father: {fileID: 691067464}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 476.1, y: -324.7}
-  m_SizeDelta: {x: 408.42755, y: 154.31529}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -49.1464, y: 86.585304}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.8034144, y: 0.8658531}
 --- !u!114 &181025538
 MonoBehaviour:
@@ -209,14 +209,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181025542}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
+        m_MethodName: LoadSceneByName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &181025539
@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec421bd79d8cbd478acfb62b65c4272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: 
 --- !u!1 &362498904
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,8 +370,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -454,8 +455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -2.383, y: -0.365, z: 8.705}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -7}
-  m_SizeDelta: {x: 1342.548, y: 437.7109}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 450, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554522502
 MonoBehaviour:
@@ -507,15 +508,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -839,10 +840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 450}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -882,8 +883,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 554522501}
-  - {fileID: 181025537}
   - {fileID: 2132048849}
+  - {fileID: 181025537}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 3, y: -1.001, z: -0.035}
@@ -1015,7 +1016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit Game!
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df9975632c4cfe64ab05061436670ec7, type: 2}
   m_sharedMaterial: {fileID: -1799838467318612568, guid: df9975632c4cfe64ab05061436670ec7, type: 2}
@@ -1042,8 +1043,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1126,12 +1127,12 @@ RectTransform:
   m_Children:
   - {fileID: 362498905}
   m_Father: {fileID: 691067464}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48, y: -322}
-  m_SizeDelta: {x: 408.42755, y: 154.31529}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 200.8536, y: 86.585304}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.8034144, y: 0.8658531}
 --- !u!114 &2132048850
 MonoBehaviour:
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec421bd79d8cbd478acfb62b65c4272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: 
 --- !u!114 &2132048851
 MonoBehaviour:
   m_ObjectHideFlags: 0
