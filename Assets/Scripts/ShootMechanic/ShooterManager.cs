@@ -68,10 +68,12 @@ public class ShooterManager : MonoBehaviour
             DisableShootComponent(i);
         }
     }
+    
     public void DisableShootComponent(int index)
     {
         shootComponents[index].IsActive = false;
     }
+    
     public void EnableShootComponent(int index)
     {
         shootComponents[index].IsActive = true;

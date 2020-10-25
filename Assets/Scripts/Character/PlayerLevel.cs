@@ -40,4 +40,5 @@ public class PlayerLevel : MonoBehaviour, IUpgradeComponent
     {
         OnLevelChanged -= ProcessLevelPower;
     }
+    
 }

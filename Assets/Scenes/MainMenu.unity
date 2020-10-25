@@ -371,5 +371,33 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_fontStyle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.18845674
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.3089543
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813916611581560758, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283715376
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719a0a70ee88e8d47832cab0a85ed912, type: 3}

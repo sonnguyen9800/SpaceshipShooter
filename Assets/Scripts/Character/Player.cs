@@ -35,6 +35,8 @@ public class Player : MonoBehaviour, ICharacter
     {
         gameObject.SetActive(false);
         print("Player die.");
+        SceneChanger scene = new SceneChanger();
+        scene.LoadSceneByName("Defeat");
     }
 
 
