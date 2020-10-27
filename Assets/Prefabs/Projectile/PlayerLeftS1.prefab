@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3782007481410886366, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f01649326f362c34ab21e27f6fdbb084, type: 3}
     - target: {fileID: 5072622715063019996, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}
       propertyPath: m_Name
       value: PlayerLeftS1
