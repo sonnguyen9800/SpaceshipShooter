@@ -31,7 +31,6 @@ public class ProjectilePooler : MonoBehaviour
             Queue<Projectile> queue = new Queue<Projectile>();
             poolDictionary.Add(pool.Type, queue);
             AddToPool(pool.Type, pool.InitialCount);
-            print(pool.InitialCount);
         }
     }
     public Projectile Get(ProjectileType type)

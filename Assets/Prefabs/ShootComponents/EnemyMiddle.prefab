@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b1e9ea9410a8b47a2bbac8a470be9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: 2
-  shootSound: {fileID: 0}
+  projectileType: 4
 --- !u!82 &-2156861002380800673
 AudioSource:
   m_ObjectHideFlags: 0

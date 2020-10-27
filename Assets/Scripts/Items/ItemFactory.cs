@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "ItemFactory", fileName = "ItemFactory")]
+[System.Serializable]
 public class ItemFactory : ScriptableObject
 {
     [System.Serializable]

@@ -10,7 +10,6 @@ public class AutoDestroyParticle : MonoBehaviour
     {
         ParticleSystem ps = GetComponent<ParticleSystem>();
         float duration = ps.main.duration;
-        Debug.Log(duration);
         Destroy(gameObject, duration);
     }
 }

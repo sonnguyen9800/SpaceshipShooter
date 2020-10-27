@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1128464561769443088, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}
       propertyPath: damage
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1128464561769443088, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}
       propertyPath: speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1128464561769443088, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}
       propertyPath: lifetime

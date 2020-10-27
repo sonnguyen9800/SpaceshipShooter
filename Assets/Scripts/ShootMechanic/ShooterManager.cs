@@ -8,6 +8,7 @@ public class ShooterManager : MonoBehaviour
     [SerializeField]
     private float baseCooldown;
     private float cooldown = 0;
+    private float cooldownReduction = 0;
     private DamageBooster damageBooster;
     [SerializeField]
     private ShootComponent[] shootComponents;
@@ -24,7 +25,10 @@ public class ShooterManager : MonoBehaviour
         // Fetch initial value
         OnDamageBoostChanged();
     }
-
+    public void ApplyCooldownReduction(float cooldownReduction)
+    {
+        this.cooldownReduction = cooldownReduction;
+    }
 
     private void Update()
     {
@@ -34,7 +38,7 @@ public class ShooterManager : MonoBehaviour
         {
             shootComponent.Shoot();
         }
-        cooldown = baseCooldown;
+        cooldown = baseCooldown * (1 - cooldownReduction);
     }
     private bool IsOnCooldown => cooldown > 0;
     private void OnDamageBoostChanged()
@@ -65,25 +69,17 @@ public class ShooterManager : MonoBehaviour
     {
         for (int i = 0; i < ShootComponentCount; i++)
         {
-            DisableShootComponent(i);
+            shootComponents[i].IsActive = false;
+
         }
     }
-    
-    public void DisableShootComponent(int index)
-    {
-        shootComponents[index].IsActive = false;
-    }
-    
     public void EnableShootComponent(int index)
     {
-        shootComponents[index].IsActive = true;
+        shootComponents[Mathf.Min(ShootComponentCount - 1, index)].IsActive = true;
     }
-    public void EnableAllShootComponent()
+    public void SetShootComponentProjectile(int index, ProjectileType type)
     {
-        for (int i = 0; i < ShootComponentCount; i++)
-        {
-            EnableShootComponent(i);
-        }
+        shootComponents[Mathf.Min(ShootComponentCount - 1, index)].ProjectileType = type;
     }
     public int ShootComponentCount => shootComponents.Length;
 }

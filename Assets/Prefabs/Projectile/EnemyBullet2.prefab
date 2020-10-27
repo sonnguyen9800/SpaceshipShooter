@@ -95,5 +95,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet2
       objectReference: {fileID: 0}
+    - target: {fileID: 7185703464765554450, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cf766a30061b33428bdb8014dc14006, type: 3}

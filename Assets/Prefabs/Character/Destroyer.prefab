@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2654651120674968331, guid: 3447cc9e8aee54a4fb3184ed799e99a6, type: 3}
+      propertyPath: projectileType
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3447cc9e8aee54a4fb3184ed799e99a6, type: 3}
 --- !u!4 &2324650200499771837 stripped
@@ -415,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961827360689859037, guid: 9c690c1909e90d2489206c867d6c8f13, type: 3}
       propertyPath: projectileType
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c690c1909e90d2489206c867d6c8f13, type: 3}
@@ -442,6 +446,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5492229349813338166}
     m_Modifications:
+    - target: {fileID: 3005712996657298166, guid: c3fe6e99d3344c34aa52e6bee8d24ec3, type: 3}
+      propertyPath: projectileType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3224065667981346826, guid: c3fe6e99d3344c34aa52e6bee8d24ec3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.109
@@ -562,6 +570,10 @@ PrefabInstance:
     - target: {fileID: 232012223852148806, guid: 3d56246ede7bab348853fe9b6c6b00f8, type: 3}
       propertyPath: m_Name
       value: Destroyer1
+      objectReference: {fileID: 0}
+    - target: {fileID: 509710271042419288, guid: 3d56246ede7bab348853fe9b6c6b00f8, type: 3}
+      propertyPath: projectileType
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d56246ede7bab348853fe9b6c6b00f8, type: 3}

@@ -20,7 +20,7 @@ public class Wave : MonoBehaviour
     }
     private Transform[] moveLocations;
     [SerializeField] private InnerWave[] innerWaves;
-    public List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
+    private List<MoveTowardLocations> movingObjects = new List<MoveTowardLocations>();
 
     public enum WaveState
     {

@@ -1,7 +1,9 @@
 public enum ProjectileType
 {
-    PlayerBase,
-    PlayerEnhanced,
+    PlayerLeft,
+    PlayerRight,
+    PlayerLeftS1,
+    PlayerRightS1,
     EnemyBase,
     EnemyS1
 }

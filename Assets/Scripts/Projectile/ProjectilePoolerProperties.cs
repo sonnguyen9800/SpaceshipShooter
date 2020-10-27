@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ProjectilePool")]
+[System.Serializable]
 public class ProjectilePoolerProperties : ScriptableObject
 {
     [System.Serializable]
