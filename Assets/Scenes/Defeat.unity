@@ -161,8 +161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 708, y: -203}
-  m_SizeDelta: {x: 408.42755, y: 154.31529}
+  m_AnchoredPosition: {x: 157, y: -86}
+  m_SizeDelta: {x: 118, y: 60}
   m_Pivot: {x: 0.8034144, y: 0.8658531}
 --- !u!114 &6322850
 MonoBehaviour:
@@ -367,8 +367,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -451,8 +451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1, y: 1}
+  m_SizeDelta: {x: -16.118317, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208065015
 MonoBehaviour:
@@ -503,8 +503,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -710,8 +710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295, y: -201}
-  m_SizeDelta: {x: 408.42755, y: 154.31529}
+  m_AnchoredPosition: {x: -43, y: -85}
+  m_SizeDelta: {x: 120, y: 60}
   m_Pivot: {x: 0.8034144, y: 0.8658531}
 --- !u!1 &554522500
 GameObject:
@@ -740,7 +740,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554522500}
   m_LocalRotation: {x: -0.020975187, y: -0.001594977, z: 0.0758055, w: 0.99690074}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 691067464}
@@ -748,8 +748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -2.383, y: -0.365, z: 8.705}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -7}
-  m_SizeDelta: {x: 1342.548, y: 437.7109}
+  m_AnchoredPosition: {x: 0, y: 26}
+  m_SizeDelta: {x: 584.9514, y: 202.02908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554522502
 MonoBehaviour:
@@ -771,10 +771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You Lose?
-
-
-    Don''t worry, try again!'
+  m_text: Don't worry, try again!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df9975632c4cfe64ab05061436670ec7, type: 2}
   m_sharedMaterial: {fileID: -1799838467318612568, guid: df9975632c4cfe64ab05061436670ec7, type: 2}
@@ -801,8 +798,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1133,7 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
