@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   life: 3
-  moveSpeed: 5
+  moveSpeed: 7
   damageBoost: 0

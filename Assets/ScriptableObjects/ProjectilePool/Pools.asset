@@ -24,7 +24,7 @@ MonoBehaviour:
     initialCount: 5
   - type: 5
     projectile: {fileID: 4091832339467716562, guid: ddc38e9b126f71d4680c9ef8b22a8662, type: 3}
-    initialCount: 50
+    initialCount: 200
   - type: 2
     projectile: {fileID: 7022498306551388356, guid: e2553cddaa1eb8b499e723a3b91338a5, type: 3}
     initialCount: 50
