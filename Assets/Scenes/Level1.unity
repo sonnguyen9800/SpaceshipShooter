@@ -177,7 +177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33291216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.86, y: -9.16, z: 3.4360676}
+  m_LocalPosition: {x: -10.76, y: -5.11, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -267,7 +267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406314734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.34, y: -5.44, z: 3.4360676}
+  m_LocalPosition: {x: -18, y: -6.8, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -407,36 +407,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1024625261}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &588039180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 588039181}
-  m_Layer: 0
-  m_Name: Location (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &588039181
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588039180}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.71, y: -4.06, z: 3.4360676}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 939523213}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &661341645
 GameObject:
@@ -596,7 +566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884237000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6799998, y: -8.54, z: 3.4360676}
+  m_LocalPosition: {x: 1.59, y: -4.77, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -627,7 +597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939523212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.11, y: 8.38, z: 0}
+  m_LocalPosition: {x: 8.15, y: 9.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 884237001}
@@ -637,7 +607,6 @@ Transform:
   - {fileID: 1053674033}
   - {fileID: 1386484634}
   - {fileID: 406314735}
-  - {fileID: 588039181}
   m_Father: {fileID: 298483277852033382}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -656,16 +625,13 @@ MonoBehaviour:
   innerWaves:
   - enemyModel: {fileID: 5492229349813338173, guid: 2c8b3b6fa1c52e042a796e91d210dc67, type: 3}
     count: 10
-    cooldown: 0.1
+    cooldown: 0.5
   - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
     count: 10
     cooldown: 0.5
   - enemyModel: {fileID: 5492229349813338173, guid: aff6589b06630314d87447472666effb, type: 3}
-    count: 5
-    cooldown: 3
-  - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
-    count: 20
-    cooldown: 0.1
+    count: 3
+    cooldown: 2
 --- !u!1 &1008869292
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,10 +755,7 @@ MonoBehaviour:
     cooldown: 1
   - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
     count: 10
-    cooldown: 0.83
-  - enemyModel: {fileID: 5492229349813338173, guid: 2c8b3b6fa1c52e042a796e91d210dc67, type: 3}
-    count: 25
-    cooldown: 1
+    cooldown: 2
 --- !u!1 &1042465223
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042465223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.35, y: -9.32, z: 3.4360676}
+  m_LocalPosition: {x: -3.87, y: -4.73, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -847,7 +810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053674032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.65, y: -7.67, z: 3.4360676}
+  m_LocalPosition: {x: -13.06, y: -6.11, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -1061,20 +1024,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   innerWaves:
   - enemyModel: {fileID: 5492229349813338173, guid: 2c8b3b6fa1c52e042a796e91d210dc67, type: 3}
-    count: 14
-    cooldown: 0.01
+    count: 15
+    cooldown: 0.5
   - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
-    count: 8
+    count: 10
     cooldown: 0.5
   - enemyModel: {fileID: 5492229349813338173, guid: aff6589b06630314d87447472666effb, type: 3}
     count: 10
     cooldown: 1
   - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
-    count: 20
-    cooldown: 0.2
+    count: 15
+    cooldown: 0.5
   - enemyModel: {fileID: 5492229349813338173, guid: aff6589b06630314d87447472666effb, type: 3}
     count: 10
-    cooldown: 0.5
+    cooldown: 1
 --- !u!1 &1376251038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1062,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376251038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.34, y: -5.44, z: 3.4360676}
+  m_LocalPosition: {x: -5.78, y: -6.45, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1024625261}
@@ -1129,7 +1092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386484633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.06, y: -5.47, z: 3.4360676}
+  m_LocalPosition: {x: -15.77, y: -6.87, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -6392,7 +6355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070065801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.53, y: -6.49, z: 3.4360676}
+  m_LocalPosition: {x: -8.53, y: -5.17, z: 3.4360676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 939523213}
@@ -6825,9 +6788,6 @@ MonoBehaviour:
   - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
     count: 5
     cooldown: 0.2
-  - enemyModel: {fileID: 5492229349813338173, guid: 2c8b3b6fa1c52e042a796e91d210dc67, type: 3}
-    count: 2
-    cooldown: 0.5
 --- !u!114 &8551081417217842584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6842,7 +6802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   innerWaves:
   - enemyModel: {fileID: 5492229349813338173, guid: 2c8b3b6fa1c52e042a796e91d210dc67, type: 3}
-    count: 8
+    count: 5
     cooldown: 0.5
   - enemyModel: {fileID: 5492229349813338173, guid: 50072b65accb506448c1cd49c60e3d5a, type: 3}
     count: 10
