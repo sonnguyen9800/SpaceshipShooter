@@ -220,10 +220,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 264940902, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 409987041, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
       propertyPath: waveManager
       value: 
       objectReference: {fileID: 298483277852033381}
+    - target: {fileID: 3195034195244315093, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696048188212278708, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8212057810502174160, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
       propertyPath: m_Camera
       value: 
@@ -315,6 +327,26 @@ PrefabInstance:
     - target: {fileID: 8212057810502174173, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212057810692428482, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212057810692428482, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212057810692428482, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.118750095
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212057810692428482, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280156415
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212057810692428482, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8212057811093826806, guid: 44590ece4473e2f4fa707832af7150a3, type: 3}
@@ -932,11 +964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826372630139756409, guid: 6521ff5d41fa916ec93e23477fc6ca3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.139
+      value: -0.026
       objectReference: {fileID: 0}
     - target: {fileID: 8826372630139756409, guid: 6521ff5d41fa916ec93e23477fc6ca3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.335
+      value: -1.503
       objectReference: {fileID: 0}
     - target: {fileID: 8826372630139756409, guid: 6521ff5d41fa916ec93e23477fc6ca3d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -976,7 +1008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826372630139756409, guid: 6521ff5d41fa916ec93e23477fc6ca3d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 21.405264
+      value: 28.415516
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826372630139756409, guid: 6521ff5d41fa916ec93e23477fc6ca3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 27.42935
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6521ff5d41fa916ec93e23477fc6ca3d, type: 3}
