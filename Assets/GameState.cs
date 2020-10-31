@@ -36,9 +36,9 @@ public class GameState : MonoBehaviour
             StartCoroutine(wait(3, "Defeat"));
         }
 
-        if (waveManager == null){
-            Debug.Log("Hello");
-            StartCoroutine(wait(5, "VictoryScene"));
-        }
+        // if (waveManager == null){
+        //     Debug.Log("Hello");
+        //     StartCoroutine(wait(3, "VictoryScene"));
+        // }
     }
 }
