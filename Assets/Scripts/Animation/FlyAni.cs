@@ -12,6 +12,8 @@ float speed = 5f;
 //adjust this to change how high it goes
 [SerializeField]
 float height = 0.5f;
+
+
 private float originalAngle;
 
 Vector3 pos;
