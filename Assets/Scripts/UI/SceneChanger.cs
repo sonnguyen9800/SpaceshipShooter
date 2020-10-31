@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 using System;
 public class SceneChanger : MonoBehaviour
 {
+
     private const string sceneSelectKey = "Scene";
 
     public void LoadSceneByName(string name)
     {
-        SceneManager.LoadScene(name, LoadSceneMode.Single);
+        //SceneManager.LoadScene(name, LoadSceneMode.Single);
+        //
+        SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
     }
     public void SelectScene(string name)
     {
@@ -23,4 +26,6 @@ public class SceneChanger : MonoBehaviour
     {
         Application.Quit();
     }
+
+
 }

@@ -31,12 +31,13 @@ public class Player : MonoBehaviour, ICharacter
             Destroy(gameObject);
         }
     }
+
+  
     private void Die()
     {
         gameObject.SetActive(false);
-        print("Player die.");
-        SceneChanger scene = new SceneChanger();
-        scene.LoadSceneByName("Defeat");
+        
+
     }
 
 
