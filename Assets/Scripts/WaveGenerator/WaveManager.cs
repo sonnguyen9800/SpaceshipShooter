@@ -63,8 +63,8 @@ public class WaveManager : MonoBehaviour
     private void DestroyWaveManager()
     {
         //  Debug.Log("All waves cleared.");
-        SceneChanger scene = new SceneChanger();
-        scene.LoadSceneByName("VictoryScene");
+        // SceneChanger scene = new SceneChanger();
+        // scene.LoadSceneByName("VictoryScene");
         Destroy(gameObject);
     }
 }

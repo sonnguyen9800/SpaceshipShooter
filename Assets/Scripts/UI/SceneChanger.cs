@@ -10,9 +10,9 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadSceneByName(string name)
     {
-        //SceneManager.LoadScene(name, LoadSceneMode.Single);
+        SceneManager.LoadScene(name, LoadSceneMode.Single);
         //
-        SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
+        //SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
     }
     public void SelectScene(string name)
     {
