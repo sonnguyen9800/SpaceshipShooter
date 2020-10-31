@@ -12,11 +12,12 @@ public class PlayerStatUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI damageBoostText;
     [SerializeField] private TextMeshProUGUI moveSpeedText;
     [SerializeField] private TextMeshProUGUI levelText;
-
+    [SerializeField] private Image cooldownMask;
     private Health health;
     private MoveComponent moveComponent;
     private DamageBooster damageBooster;
     private PlayerLevel playerLevel;
+    private ShooterManager rightShootManager;
     private void Start()
     {
         Player player = Player.Instance;
@@ -24,13 +25,17 @@ public class PlayerStatUI : MonoBehaviour
         moveComponent = player.GetComponent<MoveComponent>();
         damageBooster = player.GetComponent<DamageBooster>();
         playerLevel = player.GetComponent<PlayerLevel>();
-
+        rightShootManager = player.GetComponent<ShooterManager>();
         health.OnHealthChanged += UpdateHealthBar;
         health.OnLifeChanged += UpdateLifeText;
         moveComponent.OnMoveSpeedChanged += UpdateMoveSpeedText;
         damageBooster.OnDamageBoostChanged += UpdateDamageBoostText;
         playerLevel.OnLevelChanged += UpdateLevelText;
         UpdateAll();
+    }
+    private void Update()
+    {
+        cooldownMask.fillAmount = rightShootManager.CooldownPercentage;
     }
 
     private void UpdateAll()

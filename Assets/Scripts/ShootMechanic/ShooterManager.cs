@@ -38,7 +38,7 @@ public class ShooterManager : MonoBehaviour
         {
             shootComponent.Shoot();
         }
-        cooldown = baseCooldown * (1 - cooldownReduction);
+        cooldown = ReducedCooldown;
     }
     private bool IsOnCooldown => cooldown > 0;
     private void OnDamageBoostChanged()
@@ -82,4 +82,6 @@ public class ShooterManager : MonoBehaviour
         shootComponents[Mathf.Min(ShootComponentCount - 1, index)].ProjectileType = type;
     }
     public int ShootComponentCount => shootComponents.Length;
+    private float ReducedCooldown => baseCooldown * (1 - cooldownReduction);
+    public float CooldownPercentage => cooldown / ReducedCooldown;
 }
