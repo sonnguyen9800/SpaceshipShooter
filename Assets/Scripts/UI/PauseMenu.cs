@@ -6,14 +6,13 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool PauseGame = false;
+    private bool isPaused = false;
     [SerializeField]
     private GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Pause game status:" + this.PauseGame);
-        this.PauseGame = false;
+        isPaused = false;
         Time.timeScale = 1;
     }
 
@@ -22,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PauseGame)
+            if (isPaused)
             {
                 Resume();
             }
@@ -37,14 +36,14 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        PauseGame = true;
+        isPaused = true;
     }
 
-    private void Resume()
+    public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        PauseGame = false;
+        isPaused = false;
     }
 
 }

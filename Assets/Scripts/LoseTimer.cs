@@ -7,7 +7,7 @@ public class LoseTimer : MonoBehaviour
     IEnumerator Start()
     {
         yield return new WaitForSeconds(2);
-        SceneChanger.LoadSceneByName("Defeat");
+        SceneChanger.LoadSceneByName("DefeatScene");
     }
 
 }

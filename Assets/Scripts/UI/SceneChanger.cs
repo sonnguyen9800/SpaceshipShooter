@@ -10,13 +10,15 @@ public class SceneChanger : MonoBehaviour
 
     public static void LoadSceneByName(string name)
     {
-        SceneManager.LoadScene(name, LoadSceneMode.Single);
-        //
-        //SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
     }
     public static void SelectScene(string name)
     {
         PlayerPrefs.SetString(sceneSelectKey, name);
+    }
+    public static void ReloadCurrentScene()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
     public static void LoadSelectedScene()
     {
