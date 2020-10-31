@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 200
   life: 3
   moveSpeed: 7
-  damageBoost: 0
+  damageBoost: 5
