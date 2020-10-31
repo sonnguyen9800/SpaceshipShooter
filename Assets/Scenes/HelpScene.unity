@@ -822,7 +822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &880276449
@@ -1071,9 +1071,12 @@ MonoBehaviour:
     bullet. Special Bullet has longer cooldown rate than usual
 
 
-    Item: Sometime,
-    when enemy die, they spawn items. Each item has unique ability to improve player''s
-    stats.'
+    In Game: Hit
+    ESC to Pause
+
+
+    Item: Sometime, when enemy die, they spawn items. Each item
+    has unique ability to improve player''s stats.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4696cce3a1888543bbf87a8b20ed07e, type: 2}
   m_sharedMaterial: {fileID: 7234410982297585880, guid: b4696cce3a1888543bbf87a8b20ed07e, type: 2}
