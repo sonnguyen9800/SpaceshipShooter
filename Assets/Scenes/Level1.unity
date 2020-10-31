@@ -6932,6 +6932,8 @@ MonoBehaviour:
   waves:
   - {fileID: 8551081415999090653}
   - {fileID: 8551081417217842584}
+  - {fileID: 939523214}
+  - {fileID: 1024625262}
 --- !u!4 &298483277852033382
 Transform:
   m_ObjectHideFlags: 0
