@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
     public Action<float> OnDamageTaken = delegate { };
     public Action<float> OnHeal = delegate { };
     public Action OnDead = delegate { };
+    private bool isAlive = true;
     private void Start()
     {
         ResetHP();
@@ -65,7 +66,9 @@ public class Health : MonoBehaviour
     }
     public void Die()
     {
+        if(!isAlive) return;
         OnDead?.Invoke();
+        isAlive = false;
     }
     public float Percentage => currentHP / maxHP;
 

@@ -32,11 +32,10 @@ public class Player : MonoBehaviour, ICharacter
         }
     }
 
-  
     private void Die()
     {
+        GameObject loseTimer = new GameObject("LoseTimer",typeof(LoseTimer));
         gameObject.SetActive(false);
-        
 
     }
 

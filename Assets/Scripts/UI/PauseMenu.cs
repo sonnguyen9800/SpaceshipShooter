@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool PauseGame  = false;
-
-    public GameObject pauseMenu;
+    private bool PauseGame = false;
+    [SerializeField]
+    private GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +20,14 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)){
-            if (PauseGame){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (PauseGame)
+            {
                 Resume();
-            } else {
+            }
+            else
+            {
                 Pause();
             }
         }

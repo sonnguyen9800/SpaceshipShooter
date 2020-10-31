@@ -8,21 +8,21 @@ public class SceneChanger : MonoBehaviour
 
     private const string sceneSelectKey = "Scene";
 
-    public void LoadSceneByName(string name)
+    public static void LoadSceneByName(string name)
     {
         SceneManager.LoadScene(name, LoadSceneMode.Single);
         //
         //SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
     }
-    public void SelectScene(string name)
+    public static void SelectScene(string name)
     {
         PlayerPrefs.SetString(sceneSelectKey, name);
     }
-    public void LoadSelectedScene()
+    public static void LoadSelectedScene()
     {
         LoadSceneByName(PlayerPrefs.GetString(sceneSelectKey));
     }
-    public void Quit()
+    public static void Quit()
     {
         Application.Quit();
     }

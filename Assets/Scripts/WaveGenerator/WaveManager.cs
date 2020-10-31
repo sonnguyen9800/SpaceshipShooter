@@ -4,14 +4,15 @@ using UnityEngine;
 using System;
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private List<Wave> waves;
+    private Wave[] waves;
     private Wave currentWave;
     public int CurrentWaveIndex { get; private set; }
     public Action OnWaveChanged { get; set; }
     public Action OnFinished;
-    public int WaveCount => waves.Count;
-    void Start()
+    public int WaveCount => waves.Length;
+    void Awake()
     {
+        waves = GetComponentsInChildren<Wave>();
         CurrentWaveIndex = 0;
         currentWave = waves[CurrentWaveIndex];
     }
@@ -53,18 +54,17 @@ public class WaveManager : MonoBehaviour
         currentWave = waves[CurrentWaveIndex];
         OnWaveChanged?.Invoke();
     }
-    private bool IsAllWavesCleared => CurrentWaveIndex == waves.Count - 1;
+    private bool IsAllWavesCleared => CurrentWaveIndex > waves.Length - 1;
     private void ProcessState()
     {
         if (!IsAllWavesCleared) return;
         OnFinished?.Invoke();
-        DestroyWaveManager();
+        Victory();
     }
-    private void DestroyWaveManager()
+    private void Victory()
     {
-        //  Debug.Log("All waves cleared.");
-        // SceneChanger scene = new SceneChanger();
-        // scene.LoadSceneByName("VictoryScene");
-        Destroy(gameObject);
+        GameObject victoryTimer = new GameObject("VictoryTimer", typeof(VictoryTimer));
+        gameObject.SetActive(false);
+
     }
 }
